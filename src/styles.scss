@@ -1,1 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+$main-color:#ea5076;
+$secondary-color:#fce9e1;
+$dark-color:#3F414D;
+$white-color:#fff;
+$lighter-color:#f2efef;
+$medium-color:#acacaf;
+$light-color:#cdcbcb;
+$max-width:1180px;
+$image-url:url('assets/images/banner.png');
+
+/*core style*/
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+    line-height: 1.5rem;
+}
+
+a{
+    text-decoration: none;
+    color: $medium-color;
+}
+ul{
+    list-style-type: none;
+}
+
+/*utilities*/
+
+.container{
+    max-width: $max-width;
+    padding: 0px 15px 0px 15px;
+    margin: 0 auto;
+}
+
+.btn{
+    padding: .5rem 1.2rem;
+    text-transform: uppercase;
+    color: $white-color;
+    background-color: $main-color;
+}
