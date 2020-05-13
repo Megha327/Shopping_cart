@@ -11,9 +11,35 @@ footer{
            @extend %flex-shared;
            justify-content: center;
            li{
+                position: relative;
+                @extend %transition-shared;
+                
                a{
-                   padding: .5rem 1rem;
+                   padding: 0 1rem;
+                   border-right: 2px solid $medium-color ;
+                   @extend %transition-shared;
+                   &:hover{
+                        color: $main-color;
+                    }
                }
+               &:last-child{
+                   a{
+                       border-right: none;
+                   }
+               }
+               &:hover{
+                    @include transform(translateY(-1rem));
+                }
+           }
+       }
+       .footer-icons{
+           li{
+               a{
+                   border-right: none;
+               }
+               &:hover{
+                    @include transform(scale(1.5));
+                }
            }
        }
     }

@@ -1,0 +1,48 @@
+<section class="products-section py-2">
+    <div class="container">
+        <div class="section-main-heading p-3">
+            <h2 class="py-1">Product Listing</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Nemo modi quaerat cum excepturi cumque veritatis?
+            </p>
+        </div>
+        <div class="product-items">
+            <div *ngFor = "let product of products" 
+            class="item">
+                <img src="{{ product.thumbnail }}" alt="item image">
+                <div class="item-detail">
+                    <h3 class="product-name">{{product.title}}</h3>
+                    <div class="rating">
+                        <a *ngFor="let number of [0,1,2,3,4], let i=index"
+                        [ngClass]="{'fill':i<product.rating}" 
+                        class="fa fa-star"></a>
+	                </div>    
+                    <p class="price">${{ product.price }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- <div class="rat">
+                        
+</div> -->
+<!-- <div class="stars">
+    <form>
+        <input type="radio" class="star star-5" id="star-5" name="star">
+        <label for="star-5" class="star star-5"></label>
+
+        <input type="radio" class="star star-4" id="star-4" name="star">
+        <label for="star-4" class="star star-4"></label>
+
+        <input type="radio" class="star star-3" id="star-3" name="star">
+        <label for="star-3" class="star star-3"></label>
+
+        <input type="radio" class="star star-2" id="star-2" name="star">
+        <label for="star-2" class="star star-2"></label>
+
+        <input type="radio" class="star star-1" id="star-1" name="star">
+        <label for="star-1" class="star star-1"></label>
+    </form>
+</div> -->

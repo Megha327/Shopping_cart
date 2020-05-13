@@ -1,11 +1,2 @@
-<section class="home-banner">
-    <div class="container">
-        <div class="banner-content">
-            <h2 class="py-1">Tagline describing your E-Shop</h2>
-            <form>
-                <input type="text" placeholder="Search.." name="search2">
-                <button type="submit"><i class="fa fa-search"></i></button>
-            </form>
-        </div>
-    </div>
-</section>
+<app-search [products] = products (searchItem)="onSubmit($event)"></app-search>
+<app-products [products] = products></app-products>

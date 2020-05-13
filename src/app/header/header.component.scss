@@ -12,6 +12,8 @@ header{
         .navbar-right{
             @extend %flex-shared;
             li{
+                position: relative;
+                @extend %transition-shared;
                 a{
                     padding: 0 1.5rem;
                     border-right: 2px solid $medium-color;
@@ -24,6 +26,9 @@ header{
                     a{
                         border-right: none;
                     }
+                }
+                &:hover{
+                    transform: translateY(-1rem);
                 }
             }
         }

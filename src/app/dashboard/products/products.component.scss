@@ -1,0 +1,119 @@
+@import '../../../styles.scss';
+
+.products-section{
+    background-color: $lighter-color;
+    .section-main-heading{
+        text-align: center;
+        width: 60%;
+        margin: 0 auto;
+        h2{
+            font-size: 2rem;
+            color: $dark-color;
+        }
+        p{
+            color: $medium-color;
+        }
+    }
+    .product-items{
+        @extend %flex-shared;
+        flex-wrap: wrap;
+        .item{
+            flex-basis: calc((100%/3) - 1rem);
+            @extend %flex-shared;
+            justify-content: center;
+            margin-bottom: 2rem;
+            // background-color: red;
+            padding: 1rem 0;
+            img{
+                width: 150px;
+                height: auto;
+                margin-right: 1rem;
+            }
+            &-detail{
+                .product-name{
+                    color: $dark-color;
+                    padding-bottom: .5rem;
+                } 
+                .price{
+                    color: $dark-color;
+                    font-size: 1.5rem;
+                    padding-top: .5rem;
+                }
+                .rating{
+                    // direction: rtl;
+                    a{
+                        font-size: 1.7rem;
+                        margin-right: .3rem;
+                        color: $light-color;
+                        transition: 0.3s all;
+        
+                        // &:hover{
+                        //     color: $main-color;
+                        // }
+                    }
+                    .fill{
+                        color: $main-color;
+                    }
+        
+                    // .a1:hover ~ a{
+                    //     color: $main-color;
+                    // }
+                    // .a2:hover ~ a{
+                    //     color: $main-color;
+                    // }
+                    // .a3:hover ~ a{
+                    //     color: $main-color;
+                    // }
+                    // .a4:hover ~ a{
+                    //     color: $main-color;
+                    // }
+                    
+                }
+                // .rat{
+                //     overflow: hidden;
+                //     .stars{
+                //         display: inline-block;
+                //         direction: rtl;
+                //         input.star{
+                //             direction: rtl;
+                //             display: none;
+                //         }
+                //         label.star{
+                //             float: right;
+                //             font-size: 1.5rem;
+                //             margin-right: .5rem;
+                //             color: #444444;
+                //             @extend %transition-shared;
+                //         }
+
+                //         label.star::before{
+                //             content: '\f006';
+                //             font-family: FontAwesome;
+                //         }
+
+                //         label.fillstar::before{
+                //             content: '\f005';
+                //             color: $main-color;
+                //             @extend %transition-shared;
+                //         }
+
+                //         input.star-1:checked ~ label.star::before{
+                //             color: #f62;
+                //         }
+
+                //         input.star-5:checked ~ label.star:before{
+                //             color: $main-color;
+                //             box-shadow: 0 0 5px  #952;
+                //         }
+
+                //         input.star:checked ~ label.star:before{
+                //             content: '\f005';
+                //             color: $main-color;
+                //             @extend %transition-shared;
+                //         }                        
+                //     }
+                // }
+            }
+        }
+    }
+}
