@@ -1,0 +1,20 @@
+@import '../../styles.scss';
+
+footer{
+    .main-foooter{
+        color: $medium-color;
+        border-top: 1px solid $light-color;
+        position: relative;
+        @extend %transition-shared;
+        animation: 1s bottom-to-top forwards ease-in-out;
+       .footer-navbar, .footer-icons{
+           @extend %flex-shared;
+           justify-content: center;
+           li{
+               a{
+                   padding: .5rem 1rem;
+               }
+           }
+       }
+    }
+}

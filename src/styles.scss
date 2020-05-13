@@ -9,7 +9,38 @@ $lighter-color:#f2efef;
 $medium-color:#acacaf;
 $light-color:#cdcbcb;
 $max-width:1180px;
-$image-url:url('assets/images/banner.png');
+$banner-image:url('assets/images/banner.png');
+
+/*extended css*/
+%flex-shared{
+    display: flex;
+    justify-content: space-between;
+}
+%transition-shared{
+    transition: 1s all ease-in-out;
+}
+
+/*key frames animation*/
+@keyframes left-to-right{
+    0%{transform: translateX(-2rem);}
+    100%{transform: translateX(0);}
+}
+
+@keyframes top-to-bottom{
+    0%{transform: translateY(-3rem);}
+    100%{transform: translateY(0);}
+}
+
+@keyframes bottom-to-top{
+    0%{transform: translateY(6rem);}
+    100%{transform: translateY(0);}
+}
+
+/*mixin property*/
+
+@mixin transform($property) {
+    transform: $property;
+}
 
 /*core style*/
 
@@ -21,6 +52,7 @@ $image-url:url('assets/images/banner.png');
 body{
     font-family: 'Source Sans Pro', sans-serif;
     line-height: 1.5rem;
+    // background-color: $main-color;
 }
 
 a{
@@ -29,6 +61,33 @@ a{
 }
 ul{
     list-style-type: none;
+}
+
+
+/*padding styles*/
+.py-1{padding: 1rem 0;}
+.py-2{padding: 2rem 0;}
+.py-3{padding: 3rem 0;}
+.p-1{padding: 1rem;}
+.p-2{padding: 2rem;}
+.p-3{padding: 3rem;}
+.px-1{padding: 0 1rem;}
+.px-2{padding: 0 2rem;}
+.px-3{padding: 0 3rem;}
+
+/*margin styles*/
+.my-1{margin: 1rem 0;}
+.my-2{margin: 2rem 0;}
+.my-3{margin: 3rem 0;}
+.m-1{margin: 1rem;}
+.m-2{margin: 2rem;}
+.m-3{margin: 3rem;}
+.mx-1{margin: 0 1rem;}
+.mx-2{margin: 0 2rem;}
+.mx-3{margin: 0 3rem;}
+
+.text-center{
+    text-align: center;
 }
 
 /*utilities*/
@@ -41,7 +100,28 @@ ul{
 
 .btn{
     padding: .5rem 1.2rem;
-    text-transform: uppercase;
+    // text-transform: uppercase;
     color: $white-color;
     background-color: $main-color;
+    @extend %transition-shared;
+    
+    &:hover{
+        background-color: $dark-color;
+    }
+}
+
+.current{
+    color: $main-color;
+    position: relative;
+    @extend %transition-shared;
+    &:after{
+        content: '';
+        position: absolute;
+        left: 28%;
+        bottom: -50%;
+        width: 44%;
+        height: 2px;
+        background-color: $main-color;
+        animation: 1s left-to-right forwards ease-in-out;
+    }
 }

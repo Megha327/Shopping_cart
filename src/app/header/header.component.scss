@@ -1,0 +1,31 @@
+@import '../../styles.scss';
+header{
+    padding: 1rem 2rem;
+    border-bottom: 1px solid $light-color;
+    .navbar{
+        @extend %flex-shared;
+        justify-content: flex-end;
+        align-items: center;
+        @extend %transition-shared;
+        position: relative;
+        animation: 1s top-to-bottom forwards ease-in-out;
+        .navbar-right{
+            @extend %flex-shared;
+            li{
+                a{
+                    padding: 0 1.5rem;
+                    border-right: 2px solid $medium-color;
+                    @extend %transition-shared;
+                    &:hover{
+                        color: $main-color;
+                    }
+                }
+                &:last-child{
+                    a{
+                        border-right: none;
+                    }
+                }
+            }
+        }
+    }
+}
