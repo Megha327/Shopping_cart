@@ -7,22 +7,24 @@
             </p>
         </div>
         <div class="product-items">
-            <div *ngFor = "let product of products" 
-            class="item">
-                <div class="image-box overlay">
-                    <a href="#"><img src="{{ product.thumbnail }}" alt="item image"></a>
-                    <button class="btn btn-main">Add To Cart</button>
+            <!-- <a href="#"> -->
+                <div *ngFor = "let product of products" 
+                class="item">
+                    <div class="image-box overlay">
+                        <img src="{{ product.thumbnail }}" alt="item image">
+                        <button (click)=alert() class="btn btn-main">Add To Cart</button>
+                    </div>
+                    <div class="item-detail">
+                        <h3 class="product-name">{{product.title}}</h3>
+                        <div class="rating">
+                            <a *ngFor="let number of [0,1,2,3,4], let i=index"
+                            [ngClass]="{'fill':i<product.rating}" 
+                            class="fa fa-star"></a>
+                        </div>    
+                        <p class="price">${{ product.price }}</p>
+                    </div>
                 </div>
-                <div class="item-detail">
-                    <h3 class="product-name">{{product.title}}</h3>
-                    <div class="rating">
-                        <a *ngFor="let number of [0,1,2,3,4], let i=index"
-                        [ngClass]="{'fill':i<product.rating}" 
-                        class="fa fa-star"></a>
-	                </div>    
-                    <p class="price">${{ product.price }}</p>
-                </div>
-            </div>
+            <!-- </a> -->
         </div>
     </div>
 </section>

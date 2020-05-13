@@ -11,5 +11,7 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  alert(){
+    console.log("alert");
+  }
 }
