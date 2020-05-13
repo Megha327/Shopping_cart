@@ -22,12 +22,48 @@
             @extend %flex-shared;
             justify-content: center;
             margin-bottom: 2rem;
-            // background-color: red;
             padding: 1rem 0;
-            img{
+            .image-box{
+                text-align: center;
                 width: 150px;
                 height: auto;
                 margin-right: 1rem;
+                position: relative;
+                @extend %transition-shared;
+                img{
+                    width: 100%;
+                    height: auto;       
+                }
+                &:hover{
+                    &:before{
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: rgba(0,0,0,0.5);
+                        transition: .3s ease;
+                    }
+                    .btn-main{
+                        z-index: 2;
+                        opacity: 1;
+                    }
+                }
+                .btn-main{
+                    opacity: 0;
+                    position: absolute;
+                    padding: .2rem .5rem;
+                    border: none;
+                    cursor: pointer;
+                    left: 20%;
+                    bottom: 20%;
+                    transition: .5s all ease-in-out;
+                    &:hover{
+                        background-color: $main-color;
+                        box-shadow: 3px 2px 10px 5px $lighter-color;
+                    }
+                }
             }
             &-detail{
                 .product-name{
@@ -40,79 +76,18 @@
                     padding-top: .5rem;
                 }
                 .rating{
-                    // direction: rtl;
                     a{
                         font-size: 1.7rem;
                         margin-right: .3rem;
                         color: $light-color;
                         transition: 0.3s all;
-        
-                        // &:hover{
-                        //     color: $main-color;
-                        // }
                     }
                     .fill{
                         color: $main-color;
                     }
-        
-                    // .a1:hover ~ a{
-                    //     color: $main-color;
-                    // }
-                    // .a2:hover ~ a{
-                    //     color: $main-color;
-                    // }
-                    // .a3:hover ~ a{
-                    //     color: $main-color;
-                    // }
-                    // .a4:hover ~ a{
-                    //     color: $main-color;
-                    // }
-                    
+         
                 }
-                // .rat{
-                //     overflow: hidden;
-                //     .stars{
-                //         display: inline-block;
-                //         direction: rtl;
-                //         input.star{
-                //             direction: rtl;
-                //             display: none;
-                //         }
-                //         label.star{
-                //             float: right;
-                //             font-size: 1.5rem;
-                //             margin-right: .5rem;
-                //             color: #444444;
-                //             @extend %transition-shared;
-                //         }
-
-                //         label.star::before{
-                //             content: '\f006';
-                //             font-family: FontAwesome;
-                //         }
-
-                //         label.fillstar::before{
-                //             content: '\f005';
-                //             color: $main-color;
-                //             @extend %transition-shared;
-                //         }
-
-                //         input.star-1:checked ~ label.star::before{
-                //             color: #f62;
-                //         }
-
-                //         input.star-5:checked ~ label.star:before{
-                //             color: $main-color;
-                //             box-shadow: 0 0 5px  #952;
-                //         }
-
-                //         input.star:checked ~ label.star:before{
-                //             content: '\f005';
-                //             color: $main-color;
-                //             @extend %transition-shared;
-                //         }                        
-                //     }
-                // }
+               
             }
         }
     }

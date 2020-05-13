@@ -9,7 +9,10 @@
         <div class="product-items">
             <div *ngFor = "let product of products" 
             class="item">
-                <img src="{{ product.thumbnail }}" alt="item image">
+                <div class="image-box overlay">
+                    <a href="#"><img src="{{ product.thumbnail }}" alt="item image"></a>
+                    <button class="btn btn-main">Add To Cart</button>
+                </div>
                 <div class="item-detail">
                     <h3 class="product-name">{{product.title}}</h3>
                     <div class="rating">
@@ -25,24 +28,3 @@
 </section>
 
 
-<!-- <div class="rat">
-                        
-</div> -->
-<!-- <div class="stars">
-    <form>
-        <input type="radio" class="star star-5" id="star-5" name="star">
-        <label for="star-5" class="star star-5"></label>
-
-        <input type="radio" class="star star-4" id="star-4" name="star">
-        <label for="star-4" class="star star-4"></label>
-
-        <input type="radio" class="star star-3" id="star-3" name="star">
-        <label for="star-3" class="star star-3"></label>
-
-        <input type="radio" class="star star-2" id="star-2" name="star">
-        <label for="star-2" class="star star-2"></label>
-
-        <input type="radio" class="star star-1" id="star-1" name="star">
-        <label for="star-1" class="star star-1"></label>
-    </form>
-</div> -->
