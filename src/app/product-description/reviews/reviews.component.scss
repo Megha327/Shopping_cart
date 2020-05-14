@@ -89,3 +89,44 @@
         }
     }   
 }
+
+@media (max-width: 500px){
+    .section-reviews{
+        .reviews{
+            .review-item{
+                // padding-top: 0;
+                flex-direction: column;
+                &-details{
+                    width:100%;
+                    .profile{
+                        width: 70px;
+                        width: 70px;
+                    }
+                    .content{
+                        .creator{
+                            &-name{
+                                font-size: 1.3rem;
+                            }  
+                            &-date{
+                                font-size: 1rem;
+                                color: $medium-color;   
+                            }
+                        }
+                    }
+                }
+                &-description{
+                    padding-top: .5rem;
+                    width: 100%;
+                    padding-right: 0rem;
+                    .desc{
+                        text-align: justify;
+                    }
+                }
+    
+                &:after{
+                    width: 100%;
+                }
+            }
+        }
+    }           
+}

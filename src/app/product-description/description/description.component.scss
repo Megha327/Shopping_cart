@@ -160,3 +160,72 @@
         }
     }        
 }
+
+@media(max-width: 500px){
+    .description{
+        padding: 1rem 0;
+        background-color: $lighter-color;
+        .product-description{
+            // @extend %flex-shared;
+            flex-direction: column;
+            .image-gallery{
+                padding: 0;
+                width: 100%;
+                text-align: center;
+                position: relative;
+                .main-image{
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .multiple-image{
+                    // @extend %flex-shared;
+                    justify-content: space-between;
+                    position: relative;
+                    bottom: 0;
+                    .multiple-inner-img{
+                        margin-top: 1rem;
+                        flex-basis: calc((100%/3) - .5rem);
+                        height: 100px;
+                        position: relative;
+                        &:last-child{
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+            .product-content{
+                padding: 1rem 0;
+                width: 100%;
+                .product-heading{
+                    .product-name{
+                        font-size: 1.5rem;
+                    }
+                }
+                .price-model-box{
+                    // @extend %flex-shared;
+                    .price{
+                        color: $dark-color;
+                        font-size: 1.5rem;
+                        padding-top: .5rem;
+                    }
+                    .form{
+                        width: 50%;
+                        .model-box{
+                            font-size: 1rem;
+                            option{
+                                font-size: .88rem;
+                            }
+                        }
+                    }
+                }
+            }
+            .btn-div{
+                &::before{
+                    width: 20%;
+                }
+            }
+        }
+    }           
+}

@@ -18,7 +18,6 @@ searchTerm ;
   }
 
   search() {
-    // emit data to parent component
     this.searchItem.emit(this.searchTerm);
   }
 }
