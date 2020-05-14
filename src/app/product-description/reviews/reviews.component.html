@@ -1,1 +1,32 @@
-<p>reviews works!</p>
+<section class="section-reviews py-2">
+    <div class="container">
+        <h2 class="section-heading">Reviews</h2>
+        <div class="reviews">
+            <div class="review-item py-2 my-2"
+            *ngFor="let review of product['reviews']">
+                <div class="review-item-details">
+                    <div class="profile">
+                        <img src="{{ review.creatorImage }}" alt="profile image">
+                    </div>
+                    <div class="content">
+                        <h3 class="creator-name">{{ review.createdBy }}</h3>
+                        <p class="creator-date">{{ review.createdDate | date }}</p>
+                        <div class="rating">
+                            <a *ngFor="let number of [0,1,2,3,4], let i=index"
+                            [ngClass]="{'fill':i<review.rating}" 
+                            class="fa fa-star"></a>
+                        </div>    
+                    </div>
+                </div>
+                <div class="review-item-description">
+                    <p class="desc">{{ review.description }}
+                        <!-- Lorem ipsum dolor sit amet consectetur adipisicing 
+                        elit. Non quos provident ea, quidem sit quasi quaerat doloribus itaque perspiciatis. Sed? -->
+                    </p>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+</section>

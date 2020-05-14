@@ -14,11 +14,11 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.products = this.apiService.getProducts();
-    console.log("dashboard: ", this.products);
+    // console.log("dashboard: ", this.products);
   }
 
   onSubmit(data:string){
-    console.log("onSubmit: "+ data);
+    // console.log("onSubmit: "+ data);
     this.products = [
       {
         id: 1,
