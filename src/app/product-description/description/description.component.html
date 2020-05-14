@@ -29,7 +29,7 @@
                     <p class="price">${{ product['price'] }}</p>
                     <form action="" class="form">
                         <select class="model-box" id="color" name="color"  (change)="onChangeModelId($event.target.value)">
-                            <option *ngFor="let model of product['models']"
+                            <option class="option" *ngFor="let model of product['models']"
                             value="{{ model.id }}">{{ model.text }}</option>
                         </select>
                     </form>

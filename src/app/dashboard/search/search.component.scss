@@ -39,3 +39,25 @@
         } 
     }
 }
+
+@media(max-width: 768px){
+    .home-banner{
+        .banner-content{
+            padding-top: 17%;
+            h2{
+                font-size: 2.7rem;
+            }
+            form{
+                input[type='text']{
+                    height: 50px;
+                    margin-top: 1rem;
+                    width: 50%;
+                    font-size: 1.6rem;
+                }
+                .btn-submit{
+                    font-size: 1.4rem;
+                }
+            } 
+        }
+    }   
+}

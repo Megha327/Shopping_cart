@@ -1,11 +1,9 @@
 @import '../../../styles.scss';
 .section-reviews{
     .section-heading{
-        // font-size: 2rem;
         color: $dark-color;
     }
     .reviews{
-        // padding-top: 2rem;
         .review-item{
             position: relative;
             @extend %flex-shared;
@@ -74,4 +72,20 @@
             }
         }
     }
+}
+
+@media (max-width: 768px){
+    .section-reviews{
+        .reviews{
+            .review-item{
+                &-details{
+                    width: 40%;
+                }
+                &-description{
+                    width: 60%;
+                    padding-right: 1rem;
+                }
+            }
+        }
+    }   
 }
