@@ -15,7 +15,7 @@
                         <button (click)=alert() class="btn btn-main">Add To Cart</button>
                     </div>
                     <div class="item-detail">
-                        <h3 class="product-name">{{product.title}}</h3>
+                        <a routerLink="/product/{{ product.id }}"><h3 class="product-name">{{product.title}}</h3></a>
                         <div class="rating">
                             <a *ngFor="let number of [0,1,2,3,4], let i=index"
                             [ngClass]="{'fill':i<product.rating}" 

@@ -1,0 +1,44 @@
+<section class="description py-2">
+    <div class="container">
+      <div class="product-description">
+            <div class="image-gallery p-1">
+                <img src="../../../assets/images/products/Lipsticsk-10.png" alt="">
+            </div>
+            <div class="product-content p-1">
+                <div class="product-heading">
+                    <h3 class="product-name">Product Title</h3>
+                    <div class="rating-review">
+                        <div class="rating">
+                            <a *ngFor="let number of [0,1,2,3,4], let i=index"
+                            [ngClass]="{'fill':i<3}" 
+                            class="fa fa-star"></a>
+                        </div>    
+                        <p class="review">5 Reviews</p>
+                    </div>
+                </div> 
+                <div class="price-model-box">
+                    <p class="price">$300</p>
+                    <form action="">
+                        <select id="color" name="color">
+                            <option value="Red">Red</option>
+                            <option value="Pink">Pink</option>
+                            <option value="Nude">Nude</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="description">
+                    <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit deserunt accusamus alias explicabo,
+                        amet ad asperiores, perferendis, odit aliquam quo ipsa eligendi sunt nesciunt nam cupiditate placeat magni? 
+                        Officiis aut delectus voluptates vero impedit explicabo dolorum qui, nostrum dolor ullam 
+                       facere rem nisi. Excepturi, blanditiis repudiandae nostrum voluptatum nam ipsam.
+                       Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                       Eligendi doloribus dolor perferendis sunt id consequuntur assumenda debitis cum eius veritatis.
+                   </p>
+                </div>  
+                <div class="btn-div">
+                    <button class="btn main-btn">Add To Cart</button>
+                </div>
+            </div>
+      </div>  
+    </div>
+</section>

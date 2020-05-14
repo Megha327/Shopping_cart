@@ -1,0 +1,42 @@
+@import '../../../styles.scss';
+
+.description{
+    .product-description{
+        @extend %flex-shared;
+        .image-gallery{
+            width: 40%;
+            background-color: $lighter-color;
+            text-align: center;
+        }
+        .product-content{
+            width: 60%;
+            .product-heading{
+                .product-name{
+                    font-size: 2rem;
+                    color: $dark-color;
+                    padding-bottom: .5rem;
+                }
+                // .price{
+                //     color: $dark-color;
+                //     font-size: 1.5rem;
+                //     padding-top: .5rem;
+                // }
+                .rating-review{
+                    @extend %flex-shared;
+                    justify-content: flex-start;
+                    .rating{
+                        a{
+                            font-size: 1.5rem;
+                            margin-right: .3rem;
+                            color: $light-color;
+                            transition: 0.3s all;
+                        }
+                        .fill{
+                            color: $main-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
