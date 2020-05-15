@@ -1,6 +1,7 @@
 <section class="summary">
     <h2 class="section-heading py-1">Summary</h2>
-    <div class="items">
+    <div class="items"
+    [ngClass] = "{ 'items-none': currentTab == 0 }">
         <div class="item my-1">
             <div class="product-image">
                 <img src="../../../assets/images/products/Lipsticsk-11.png" alt="product image">
@@ -11,10 +12,12 @@
             </div>
         </div>
     </div>
-    <div class="coupen">
+    <div class="coupen"
+    [ngClass] = "{ 'items-none': currentTab == 1 }">
         <p>ENTER COUPON CODE</p>
     </div>
-    <div class="voucher">
+    <div class="voucher"
+    [ngClass] = "{ 'items-none': currentTab == 0 }">
         <form action="" class="form">
             <select class="model-box" id="voucher" name="voucher">
                 <option class="option" value="1">No voucher available</option>

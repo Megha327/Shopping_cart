@@ -1,17 +1,23 @@
 <section class="cart-process py-2">
     <div class="container">
         <ul class="cart-progress">
-            <li class="activeCart">1. Shopping Cart</li>
-            <li>2. Shipping Details</li>
-            <li>3. Payment Options</li>
+            <li *ngFor="let process of cartProcess; let i = index"
+            [ngClass]="{'activeCart': i == currentTab}">{{ process }}</li>
         </ul>
     </div>
 </section>
 <div class="container main-section">
     <div class="content left-content">
-        <app-shopping-cart></app-shopping-cart>
+        <router-outlet></router-outlet>
     </div>
     <div class="content right-content">
-        <app-summary></app-summary>
+        <app-summary [currentTab] = "currentTab"></app-summary>
     </div>
 </div>
+<div class="buttons">
+    <div class="container">
+        <button class="btn btn-next" (click) = switch(currentTab+1)>Next</button>
+        <button class="btn btn-cancel">Cancel</button>
+    </div>
+</div>
+

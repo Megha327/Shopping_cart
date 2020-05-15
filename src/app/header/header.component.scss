@@ -1,5 +1,10 @@
 @import '../../styles.scss';
 header{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: $white-color;
+    z-index: 2;
     padding: 1rem 2rem;
     border-bottom: 1px solid $light-color;
     .navbar{
@@ -31,6 +36,10 @@ header{
                     transform: translateY(-1rem);
                 }
             }
+        }
+        .btn{
+            border: none;
+            cursor: pointer;
         }
     }
 }

@@ -88,29 +88,6 @@
             }
         }
     }
-    .buttons{
-        .btn{
-            border: none;
-            margin-right: 1rem;
-            padding: .5rem 2rem;
-            cursor: pointer;
-        }
-        .btn-next{
-            background-color: $dark-color;
-            color: $white-color;
-            &:hover{
-                background-color: $main-color;
-            }
-        }
-        .btn-cancel{
-            background-color: $light-color;
-            color: $dark-color;
-            &:hover{
-                background-color: red;
-                color: $white-color;
-            }
-        }
-    }
 }
 
 @media (max-width: 768px){
@@ -199,42 +176,8 @@
                     }
                 }
                 .close{
-                    position: absolute;
-                    display: none;
                     right: 2%;
                     top: 1%;
-                    font-size: 1.5rem;
-                    color: $light-color;
-                    cursor: pointer;
-                }
-                &:hover{
-                    box-shadow: 3px 2px 7px 5px $light-color;
-                    .close{
-                        display: block;
-                    }
-                }
-            }
-        }
-        .buttons{
-            .btn{
-                border: none;
-                margin-right: 1rem;
-                padding: .5rem 2rem;
-                cursor: pointer;
-            }
-            .btn-next{
-                background-color: $dark-color;
-                color: $white-color;
-                &:hover{
-                    background-color: $main-color;
-                }
-            }
-            .btn-cancel{
-                background-color: $light-color;
-                color: $dark-color;
-                &:hover{
-                    background-color: red;
-                    color: $white-color;
                 }
             }
         }

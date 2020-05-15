@@ -1,0 +1,68 @@
+@import '../../styles.scss';
+.order-placed{
+    // position: relative;
+    min-height: 60vh;
+    padding: 1rem;
+    .section-content{
+        width: 60%;
+        margin: 0 auto;
+        padding-top: 5%;
+        text-align: center;
+        h2{
+            font-size: 3rem;
+            color: $dark-color;
+        }
+        p{
+            font-size: 1rem;
+            color: $medium-color;
+        }
+        .btn-div{
+            margin-top: 3rem;
+            .btn{
+                padding: 1rem 2.5rem;
+                font-size: 1.7rem;
+            }
+        }
+    }
+}
+
+@media (max-width:500px){
+    .order-placed{
+        min-height: 60vh;
+        padding: 1rem;
+        .section-content{
+            width: 100%;
+            margin: 0 auto;
+            h2{
+                font-size: 2rem;
+                line-height: 2rem;
+            }
+            p{
+                font-size: 1.3rem;
+            }
+            .btn-div{
+                margin: 3rem 0;
+                .btn{
+                    padding: .5rem 2rem;
+                    font-size: 1.3rem;
+                }
+            }
+        }
+    }   
+}
+
+@media (max-width: 768px){
+    .order-placed{
+        min-height: 50vh;
+        padding: 1rem;
+        .section-content{
+            width: 100%;
+            padding-top: 12%;
+            p{
+                font-size: 1.4rem;
+                line-height: 2rem;
+                color: $medium-color;
+            }
+        }
+    }        
+}

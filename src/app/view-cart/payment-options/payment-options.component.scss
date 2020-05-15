@@ -1,0 +1,234 @@
+@import '../../../styles.scss';
+
+.payment-mothed{
+    .section-heading{
+        color: $dark-color;
+        border-bottom: 1px solid $light-color;
+        margin-bottom: 1rem;
+    }
+    .payment-option{
+        form{
+            .card-option{
+                border: 1px solid $light-color;
+                padding: 1rem;
+                .radio-text{
+                    margin: 1rem 0;
+                    @extend %flex-shared;
+                    justify-content: flex-start;
+                    align-items: center;
+                    .text{
+                        margin-left: 1rem;
+                        h3{
+                            color: $dark-color;
+                        }
+                        p{
+                            line-height: .88rem;
+                            color: $medium-color;
+                        }
+                    }
+                }
+                .card-detail{
+                    @extend %flex-shared;
+
+                    input{
+                        height: 35px;
+                        padding-left: 2px;
+                        width: 15%;
+                        margin: .5rem 0;
+                    }
+                    .cardno{
+                        position: relative;
+                        width: 50%;
+                        &:after {
+                            content: "\f09d";
+                            font-family: FontAwesome;
+                            font-style: normal;
+                            font-weight: normal;
+                            text-decoration: inherit;
+                            color: $dark-color;
+                            font-size: 18px;
+                            padding-right: 0.5rem;
+                            position: absolute;
+                            top: 13px;
+                            right: 0;
+                        } 
+                        input{
+                            width: 100%;
+                        }        
+                    }
+                    .cw{
+                        width: 15%;
+                        position: relative;
+                        &:after {
+                            content: "\f05a";
+                            font-family: FontAwesome;
+                            font-style: normal;
+                            font-weight: normal;
+                            text-decoration: inherit;
+                            color: $dark-color;
+                            font-size: 18px;
+                            padding-right: 0.5rem;
+                            position: absolute;
+                            top: 13px;
+                            right: 0;
+                        }
+                        input{
+                            width: 100%;
+                        }
+                    }
+                }
+                input{
+                    &:last-child{
+                        width: 100%;
+                        height: 35px;
+                        margin: .5rem 0;
+                    }
+                }
+            }
+            .online-option{
+                border:1px solid $light-color;
+                border-left: none;
+                border-right: none;
+                margin: 1rem 0;
+                .radio-text{
+                    margin: 1rem 0;
+                    padding: 1rem;
+                    border: 1px solid $light-color;
+                    @extend %flex-shared;
+                    justify-content: flex-start;
+                    align-items: center;
+                    .text{
+                        margin-left: 1rem;
+                        margin-right: 2rem;
+                        h3{
+                            color: $dark-color;
+                        }
+                        p{
+                            // font-size: .88rem;
+                            color: $medium-color;
+                        }
+                    }
+                    img{
+                        margin-top: 1rem;
+                        width: 100px;
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:500px){
+    .payment-mothed{
+        padding: 0;
+        .payment-option{
+            form{
+                .card-option{
+                    .radio-text{
+                        margin: 1rem 0;
+                    }
+                    .card-detail{
+                        @extend %flex-shared;
+                        flex-direction: column;
+                        input{
+                            width: 100%;
+                        }
+                        .cardno{
+                            position: relative;
+                            width: 100%;
+                            &:after {
+                                content: "\f09d";
+                                font-family: FontAwesome;
+                                font-style: normal;
+                                font-weight: normal;
+                                text-decoration: inherit;
+                                color: $dark-color;
+                                font-size: 18px;
+                                padding-right: 0.5rem;
+                                position: absolute;
+                                top: 13px;
+                                right: 0;
+                            } 
+                            input{
+                                width: 100%;
+                            }        
+                        }
+                        .cw{
+                            width: 100%;
+                            position: relative;
+                            &:after {
+                                content: "\f05a";
+                                font-family: FontAwesome;
+                                font-style: normal;
+                                font-weight: normal;
+                                text-decoration: inherit;
+                                color: $dark-color;
+                                font-size: 18px;
+                                padding-right: 0.5rem;
+                                position: absolute;
+                                top: 13px;
+                                right: 0;
+                            }
+                            input{
+                                width: 100%;
+                                border: 1px solid $dark-color;
+                            }
+                        }
+                    }
+                    input{
+                        &:last-child{
+                            padding-left: 3px;
+                            border: 1px solid $dark-color;
+                        }
+                    }
+                }
+                .online-option{
+                    .radio-text{
+                        @extend %flex-shared;
+                        flex-wrap: wrap;
+                        input{
+                            margin-top: 1rem;
+                        }
+                        .text{
+                            margin-left: 2rem;
+                            margin-right: 0;
+                            margin-top: -2rem;
+                            p{
+                                font-size: 1rem;
+                            }
+                        }
+                        img{
+                            margin: 0 auto;
+                            margin-top: 1rem;
+                            width: 250px;
+                            height: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }   
+}
+
+@media (max-width:768px){
+    .payment-mothed{
+        .payment-option{
+            form{
+                .card-option{
+                    .card-detail{
+                        input{
+                            border: 1pxx solid $dark-color;
+                        }
+                    }
+                    input{
+                        &:last-child{
+                            margin: 1rem 0;
+                            border: 1px solid $dark-color;
+                        }
+                    }
+                }
+            }
+        }
+    }   
+}

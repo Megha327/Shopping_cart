@@ -2,7 +2,6 @@
 
 .cart-process{
     background-color: $lighter-color;
-    margin-bottom: 1rem;
     .cart-progress{
         @extend %flex-shared;
         justify-content: center;
@@ -27,6 +26,32 @@
     .right-content{
         width: 35%;
         margin-bottom: 3rem;
+    }
+}
+.buttons{
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    padding-left: 1rem;
+    .btn{
+        border: none;
+        margin-right: 1rem;
+        padding: .5rem 2rem;
+        cursor: pointer;
+    }
+    .btn-next{
+        background-color: $dark-color;
+        color: $white-color;
+        &:hover{
+            background-color: $main-color;
+        }
+    }
+    .btn-cancel{
+        background-color: $light-color;
+        color: $dark-color;
+        &:hover{
+            background-color: red;
+            color: $white-color;
+        }
     }
 }
 

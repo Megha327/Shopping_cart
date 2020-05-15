@@ -20,6 +20,7 @@ import { ShoppingCartComponent } from './view-cart/shopping-cart/shopping-cart.c
 import { ShippingDetailsComponent } from './view-cart/shipping-details/shipping-details.component';
 import { PaymentOptionsComponent } from './view-cart/payment-options/payment-options.component';
 import { SummaryComponent } from './view-cart/summary/summary.component';
+import { OrderPlacedComponent } from './order-placed/order-placed.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { SummaryComponent } from './view-cart/summary/summary.component';
     ShippingDetailsComponent,
     PaymentOptionsComponent,
     SummaryComponent,
+    OrderPlacedComponent,
   ],
   imports: [
     BrowserModule,
