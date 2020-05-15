@@ -1,0 +1,82 @@
+@import '../../../styles.scss';
+
+.summary{
+    .section-heading{
+        color: $dark-color;
+        border-bottom: 1px solid $light-color;
+    }
+    .items{
+        border-bottom: 1px solid $light-color;
+        .item{
+            @extend %flex-shared;
+            justify-content: flex-start;
+            padding-left: 1rem;
+            @extend %transition-shared;
+            .product-image{
+                width: 30%;
+                height: 15%;
+                margin-right: 2rem;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .detail{
+                width: 60%;
+                .product-name{
+                    color: $dark-color;
+                    padding-top: .5rem;
+                }
+                .price{
+                    color: $medium-color;
+                    font-size: 1.5rem;
+                }
+            }
+
+            &:hover{
+                box-shadow: 3px 2px 8px 5px $light-color;
+            }
+        }
+    }
+    .coupen{
+        border-bottom: 1px solid $light-color;
+        padding: .5rem 0;
+      p{
+        color: $medium-color;
+      }  
+    }
+    .voucher{
+        border-bottom: 1px solid $light-color;
+        // padding: .5rem 0;
+        .form{
+            .model-box{
+                padding: .5rem 0;;
+                width: 100%;
+                font-size: 1rem;
+                background-color: transparent;
+                border: none;
+                color: $dark-color;
+            }
+        }
+    }
+    .calculation{
+        .sub-total, .shipping, .taxes, .total{
+            @extend %flex-shared;
+            color: $medium-color;
+            padding-top: .2rem;
+        }
+        .taxes{
+            padding-bottom: .5rem;
+            border-bottom: 1px solid $light-color;
+        }
+        .total{
+            padding-top: .5rem;
+            font-weight: bold;
+            p{
+                &:last-child{
+                    color: $dark-color;
+                }
+            }
+        }
+    }
+}

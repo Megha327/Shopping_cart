@@ -1,0 +1,35 @@
+<section class="shopping-cart px-1">
+    <h2 class="section-heading py-1">Shopping Cart</h2>
+    <div class="items">
+        <div class="item">
+            <span class="close" (click) = "removeFromCart()"><i class="fa fa-window-close" aria-hidden="true"></i></span>
+            <div class="product-image">
+                <img src="../../../assets/images/products/Lipsticsk-10.png" alt="product image">
+            </div>
+            <div class="product-detail">
+                <h3 class="product-heading">Product Name</h3>
+                <p class="desc">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing ...
+                </p>
+                <p class="price">$300</p>
+            </div>
+            <div class="item-count">
+                <form action="" class="form">
+                    <select class="model-box" id="color" name="color">
+                        <option class="option" value="1">Red</option>
+                        <option class="option" value="2">Pink</option>
+                        <option class="option" value="3">Nude</option>
+                    </select>
+                    <div class="pcs">
+                        <input type="number" min="1" max="10" name="pcs" value="1" id="pcs">
+                        <span class="text">Pcs</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="buttons">
+        <button class="btn btn-next">Next</button>
+        <button class="btn btn-cancel">Cancel</button>
+    </div>
+</section>
