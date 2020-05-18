@@ -1,13 +1,21 @@
-<header>
+<header class="border-bottom">
     <nav class="navbar">
-        <ul class="navbar-right">
-            <li><a routerLink="/dashboard" class="current">Home</a></li>
-            <li><a href="#" >About</a></li>
-            <li><a href="#" >Shop</a></li>
-            <li><a href="#" >Help</a></li>
-        </ul>
-        <!-- <a routerLink="/cart" class="btn"><i class="fa fa-shopping-cart"></i> Your Cart</a> -->
-        <span class="selected-product-count">{{ selectedProductCount }}</span>
-        <button class="btn btn-main" (click) = "switchCart()"><i class="fa fa-shopping-cart"></i> Your Cart</button>
+        <div class="logo">
+            <h1>Online<span>CARE</span></h1>
+        </div>
+        <div class="right-nav">
+            <ul class="navbar-right">
+                <li><a [routerLink]="['/dashboard']" [routerLinkActive]="['current']">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+            <div class="btn-div">
+                <div class="selected-product-count"
+                [ngClass] = "{ 'display-none' : selectedProductCount == 0 }">{{ selectedProductCount }}</div>
+                <button class="btn btn-main" (click) = "switchCart()"><i class="fa fa-shopping-cart"></i> Your Cart</button>
+            </div>
+        </div>
     </nav>
 </header>
+<!-- [ngClass]="{ 'current' : menu.link == '/dashboard' }" -->

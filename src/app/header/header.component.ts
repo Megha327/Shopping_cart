@@ -9,7 +9,7 @@ import { ShoppingCartService } from '../shopping-cart.service';
 })
 export class HeaderComponent implements OnInit {
 
-  selectedProductCount;
+  selectedProductCount = 0;
 
   constructor(private router:Router,
       private shoppingcartService:ShoppingCartService
@@ -23,6 +23,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log("selected product count: ", this.selectedProductCount);
   }
 
   switchCart(){

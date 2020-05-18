@@ -90,6 +90,14 @@ ul{
     text-align: center;
 }
 
+.display-none{
+    display: none;
+}
+
+.border-bottom{
+    border-bottom: 1px solid $light-color;
+}
+
 /*utilities*/
 
 .container{
@@ -111,14 +119,14 @@ ul{
 }
 
 .current{
-    color: $main-color;
+    color: $main-color !important;
     position: relative;
     @extend %transition-shared;
     &:after{
         content: '';
         position: absolute;
         left: 28%;
-        bottom: -50%;
+        bottom: -30%;
         width: 44%;
         height: 2px;
         background-color: $main-color;
@@ -126,3 +134,4 @@ ul{
     }
 
 }
+
