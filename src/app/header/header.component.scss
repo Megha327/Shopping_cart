@@ -41,6 +41,13 @@ header{
             border: none;
             cursor: pointer;
         }
+        .selected-product-count{
+            background-color: greenyellow;
+            border-radius: 50%;
+            text-align: center;
+            width: 25px;
+            height: 25px;
+        }
     }
 }
 

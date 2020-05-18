@@ -10,3 +10,18 @@
         </div>
     </div>
 </section>
+<div class="overlay"
+    [ngClass]="{'overlay-none':isOrderPlaced}">
+    <div class="text">
+        <h2 [ngClass]="{ 'loader-spiner-none' : !isRedirecting }">Redirecting To Merchant</h2>
+        <div class="loader" [ngClass]="{ 'loader-spiner-none' : !isRedirecting }"></div>
+        <button class="payment-btn " 
+        [ngClass]="{ 'payment-btn-none' : isRedirecting }">
+            <i class="fa fa-check-circle"></i>
+            <br><br>
+            Payment Sucessfully
+        </button>
+    </div>
+</div>
+<!-- overlay-none -->
+<!-- loader-spiner-none -->

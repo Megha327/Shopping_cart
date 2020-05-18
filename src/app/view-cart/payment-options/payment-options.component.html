@@ -1,29 +1,41 @@
 <section class="payment-mothed px-1">
     <h2 class=" section-heading py-1">payment-mothed</h2>
     <div class="payment-option">
-        <form action="">
-            <div class="card-option">
+        <form action="" (ngSubmit) = switchPayNow()
+        #f = "ngForm">
+            <div class="card-option" id="user-data" ngModelGroup = "userData" #userData = "ngModelGroup">
                 <div class="radio-text">
-                    <input type="radio" name="payment" value="card">
+                    <input type="radio" name="payment" value="card" [(ngModel)]="payment.selected">
                     <div class="text">
                         <h3>Credit Card</h3>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum, iusto?</p>
                     </div>
                 </div>
+                <span class="span-block" *ngIf="!userData.valid && userData.touched">
+                    Please Fill all card details *!!
+                </span>
                 <div class="card-detail">
                     <div class="cardno">
-                        <input type="text" name="cardno" placeholder="0000 0000 0000 0000">
+                        <input type="text" name="cardno" placeholder="0000 0000 0000 0000"
+                        [(ngModel)]="payment.card.cardno"
+                        [disabled]="payment.selected != 'card'" required>
                     </div>
-                    <input type="text" name="expiry" placeholder="MM/YY">
+                    <input type="text" name="expiry" placeholder="MM/YY"
+                        [(ngModel)]="payment.card.expiry"
+                        [disabled]="payment.selected != 'card'" required>
                     <div class="cw">
-                        <input type="text" name="cw" placeholder="CW">
+                        <input type="text" name="cvv" placeholder="CVV"
+                        [(ngModel)]="payment.card.cvv"
+                        [disabled]="payment.selected != 'card'" required>
                     </div>
                 </div>
-                <input type="text" name="hname" placeholder="Card Holder Name">
+                <input type="text" name="hname" placeholder="Card Holder Name"
+                    [(ngModel)]="payment.card.hname"
+                    [disabled]="payment.selected != 'card'" required>
             </div>
             <div class="online-option">
                 <div class="radio-text">
-                    <input type="radio" name="payment" value="paypal">
+                    <input type="radio" name="payment" value="paypal"  [(ngModel)]="payment.selected">
                     <div class="text">
                         <h3>Paypal</h3>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum, iusto?
@@ -33,6 +45,13 @@
                     <div class="logo-image">
                         <img src="../../../assets/images/paypal.png" alt="logo image">
                     </div>
+                </div>
+            </div>
+            <div class="buttons">
+                <div class="container">
+                    <button class="btn btn-prev" (click) = switchPre()>Previous</button>
+                    <button class="btn btn-next" type="submit" [disabled] = "!f.valid">PayNow</button>
+                    <button class="btn btn-cancel">Cancel</button>
                 </div>
             </div>
         </form>

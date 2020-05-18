@@ -16,7 +16,8 @@ const routes: Routes = [
   {path:'product/:id', component: ProductDescriptionComponent },
   {path:'cart', component: ViewCartComponent,
     children: [
-      { path: '', component: ShoppingCartComponent },
+      { path: '', redirectTo: 'shoppingcart', pathMatch: 'full' },
+      // { path: '', component: ShoppingCartComponent },
       { path: 'shoppingcart', component: ShoppingCartComponent },
       { path: 'shippingdetails', component: ShippingDetailsComponent },
       { path: 'paymentoptions', component: PaymentOptionsComponent }

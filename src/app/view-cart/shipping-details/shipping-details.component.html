@@ -1,46 +1,149 @@
 <section class="shippping-details px-1">
     <h2 class="section-heading py-1">Shipping Details</h2>
     <div class="details">
-        <form action="" class="form-detail">
-            <div class="form-input">
-                <input type="text" id="fname" name="fname" placeholder="First Name" required>
-                <input type="text" id="lname" name="lname" placeholder="Last Name" required>
-            </div>
-            <div class="form-input">
-                <input type="text" id="address" name="address" placeholder="Address" required>
-            </div>
-            <div class="form-input">
-                <input type="text" id="address2" name="address2" placeholder="Address 2 required">
-            </div>
-            <div class="form-input">
-                <select class="country" id="country" name="country" required>
-                    <option value="0">Country</option>
-                    <option value="0">India</option>
-                    <option value="0">China</option>
-                    <option value="0">U.S.A.</option>
-                </select>
-                <input type="text" id="city" name="city" placeholder="City" required>
-            </div>
-            <div class="form-input">
-                <input type="text" id="zipCode" name="zipCode" placeholder="Zip/Postal Code" required>
-                <input type="text" id="phone" name="phone" placeholder="Phone Number" required>
-            </div>
-            <!-- <div class="form-input radio-form">
-                <div class="radio-div">
-                    <input type="radio" name="shipping" checked>
-                    <div class="radio-text">
-                        <p>Free Shipping</p>
-                        <p>Between 2-5 working days</p>
+        <form name="form"
+            (ngSubmit) = "switchNext()"
+            #f = "ngForm"
+            class="form-detail"
+         >
+         <div id="user-data" ngModelGroup = "userData" #userData = "ngModelGroup">
+             <p>Please Fill all fields *</p>
+                <div class="form-input">
+                    <div class="form-group">
+                        <input 
+                            type="text" 
+                            id="firstName" 
+                            placeholder="First Name *"
+                            [(ngModel)] = "user.firstName" 
+                            name="firstName"  
+                            required 
+                            #firstName="ngModel"
+                        >
+                        <span class="span-block" *ngIf="!firstName.valid && firstName.touched">
+                            Please enter FirstName!!
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <input 
+                            type="text" 
+                            id="lastName"
+                            [(ngModel)] = "user.lastName" 
+                            name="lastName" 
+                            placeholder="Last Name *" 
+                            required
+                            #lastName="ngModel"
+                        >
+                        <span class="span-block" *ngIf="!lastName.valid && lastName.touched">
+                            Please enter lastName!!
+                        </span>
                     </div>
                 </div>
-                <div class="radio-div">
-                    <input type="radio" name="shipping">
-                    <div class="radio-text">
-                        <p>Next Day Delivery-$20</p>
-                        <p>24 hours from checkout</p>
+                <div class="group-add">
+                    <input 
+                        type="text" 
+                        id="address"
+                        [(ngModel)] = "user.address1"
+                        name="address1" 
+                        placeholder="Address 1 *" 
+                        required
+                        #address1="ngModel"
+                    >
+                    <span class="span-block" *ngIf="!address1.valid && address1.touched">
+                        Please enter Proper Address 1 !!
+                    </span>
+                </div> 
+                <div class="group-add">
+                    <input 
+                        type="text" 
+                        id="address2"
+                        [(ngModel)] = "user.address2"
+                        name="address2" 
+                        placeholder="Address 2 *" 
+                        required
+                    >
+                    <!-- <span class="span-block" *ngIf="!address2.valid && address2.touched">
+                        Please enter proper Address 2 !!
+                    </span> -->
+                </div>
+                <div class="form-input">
+                    <div class="form-group">
+                        <select 
+                            class="country" 
+                            id="country" 
+                            [ngModel]="defaultCountry"
+                            name="country" 
+                            required
+                        >
+                            <!-- <option value="0">Country</option> -->
+                            <option value="india">India</option>
+                            <option value="china">China</option>
+                            <option value="usa">U.S.A.</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input 
+                            type="text" 
+                            id="city"
+                            [(ngModel)] = "user.city"
+                            name="city" 
+                            placeholder="City *" 
+                            required
+                            #city="ngModel"
+                        >
+                        <span class="span-block" *ngIf="!city.valid && city.touched">
+                            Please enter city!!
+                        </span>
                     </div>
                 </div>
-            </div> -->
+                <div class="form-input">
+                    <div class="form-group">
+                        <input 
+                            type="text" 
+                            id="zipCode"
+                            [(ngModel)] = "user.zipCode"
+                            name="zipCode" 
+                            placeholder="Zip/Postal Code *" 
+                            required
+                            #zipCode="ngModel"
+                        >
+                        <span class="span-block" *ngIf="!zipCode.valid && zipCode.touched">
+                            Please enter Postal Code!!
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <input 
+                            type="text" 
+                            id="phone"
+                            [(ngModel)] = "user.phone"
+                            name="phone" 
+                            placeholder="Phone Number *"
+                            [ngModel]="userPhone.mobileNumber" 
+                            [pattern]="mobNumberPattern" 
+                            #mobNumber="ngModel"
+                            required
+                        >
+                        <span class="span-block" *ngIf="!userData.valid && userData.touched">
+                            <p *ngIf="!mobNumber.valid">Please enter valid PhoneNumber!!</p>
+                        </span>
+                    </div>
+                </div>
+                <div class="radio-form">
+                    <div class="radio-box" *ngFor="let shipping of defaultShipping">
+                        <input type="radio" name="shipping"
+                         [(ngModel)]="user.shipping" 
+                         value="{{ shipping.value }}" >
+                        <label>{{ shipping.text1 }} <span>{{ shipping.text2 }}</span></label>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <div class="container">
+                        <button class="btn btn-prev" (click) = switchPre()>Previous</button>
+                        <button type="submit" class="btn btn-next" [disabled] = "!f.valid" >Next</button>
+                        <!-- <input type="submit" value="Next" class="btn btn-next" (click) = switchNext()> -->
+                        <button class="btn btn-cancel" (click) = reset()>Cancel</button>
+                    </div>
+                </div>
+            </div>
         </form>
-    </div>
+    </div>    
 </section>

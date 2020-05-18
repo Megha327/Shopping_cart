@@ -1,6 +1,8 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
-import { Router } from '@angular/router';
-
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
+import { ShoppingCartService } from '../shopping-cart.service';
+import { shoppingCartValues } from './cart.constant';
+import { filter, distinctUntilChanged } from 'rxjs/operators';
 
 
 @Component({
@@ -8,29 +10,48 @@ import { Router } from '@angular/router';
   templateUrl: './view-cart.component.html',
   styleUrls: ['./view-cart.component.scss']
 })
-export class ViewCartComponent implements OnInit, OnChanges {
+export class ViewCartComponent implements OnInit {
+  cartProcess = shoppingCartValues;
+  currentTab:number = 0;  
+  cartDetails;
 
-  cartProcess=["1. Shopping Cart","2. Shipping Details","3. Payment Options"];
-  cartProcessRoute=['shoppingcart', 'shippingdetails', 'paymentoptions']
-  
-  currentTab:number = 0;
+  constructor(
+      public router: Router, private route: ActivatedRoute, 
+      private shoppingCartService:ShoppingCartService
+    ) {
 
-  
-  constructor(private router:Router) { }
+      // console.log("constructor called");
+      // this.currentTab = 0;
+      
+      this.router.events
+         .pipe(filter(e => e instanceof NavigationEnd))
+         .subscribe((e: NavigationEnd) => {
+          // console.log(e);
+          switch(e.urlAfterRedirects) {
+            case "/cart/shippingdetails":
+              this.shoppingCartService.setMessage(1);
+              break;
+            case "/cart/paymentoptions":
+              this.shoppingCartService.setMessage(2);
+              break;
+            
+          }
+         });
+      
+      this.shoppingCartService.getMessage()
+      .subscribe(data => {
+        // console.log("data on view subs : ", data);
+        this.currentTab = data;
+        // console.log("shopping service: view current tab", this.currentTab);
+      });
+
+      
+    }
 
   ngOnInit(): void {
-    this.currentTab = 0
-    console.log("OnInit called.")
-  }
-  ngOnChanges(){
-    // this.switch(0);
-    // this.currentTab = 0;
-    console.log("NgOnChanges called.")
+    // console.log("init called");
+    this.cartDetails = this.shoppingCartService.getCartDetails();
   }
 
-  switch(index:number) {
-    this.currentTab = index;
-    console.log(this.currentTab);
-    this.router.navigateByUrl("cart/"+ this.cartProcessRoute[index]);
-  }
+
 }

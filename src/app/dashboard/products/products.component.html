@@ -11,7 +11,7 @@
             class="item">
                 <div class="image-box overlay">
                     <img src="{{ product.thumbnail }}" alt="item image">
-                    <button (click)=alert() class="btn btn-main">Add To Cart</button>
+                    <button (click)=addToCart(product.id) class="btn btn-main">Add To Cart</button>
                 </div>
                 <a routerLink="/product/{{ product.id }}" class="item-detail">
                     <h3 class="product-name">{{product.title}}</h3>

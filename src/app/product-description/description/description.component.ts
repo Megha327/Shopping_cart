@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiServiceService } from 'src/app/Api-service/api-service.service';
+import { ShoppingCartService } from 'src/app/shopping-cart.service';
 
 @Component({
   selector: 'app-description',
@@ -13,7 +14,8 @@ export class DescriptionComponent implements OnInit {
   
   constructor(
       private route:ActivatedRoute, 
-      private apiService:ApiServiceService
+      private apiService:ApiServiceService,
+      private cartService: ShoppingCartService
     ) { }
 
   ngOnInit(): void {
@@ -30,5 +32,10 @@ export class DescriptionComponent implements OnInit {
 
   onChangeImageBox(imgsrc) {
     this.currentProductModel['selected'] = imgsrc;
+  }
+
+  addProductToCart(productId:number, quantity: number){
+
+    this.cartService.addProductToCartWithModel(productId, this.currentProductModel['model_id']);
   }
 }

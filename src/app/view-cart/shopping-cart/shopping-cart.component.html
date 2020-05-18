@@ -1,31 +1,43 @@
 <section class="shopping-cart px-1">
     <h2 class="section-heading py-1">Shopping Cart</h2>
     <div class="items">
-        <div class="item">
-            <span class="close" (click) = "removeFromCart()"><i class="fa fa-window-close" aria-hidden="true"></i></span>
+        <div class="item" *ngFor="let cartProduct of cartDetails">
+            <span class="close" (click) = "removeFromCart(cartProduct.id)"><i class="fa fa-window-close" aria-hidden="true"></i></span>
             <div class="product-image">
-                <img src="../../../assets/images/products/Lipsticsk-10.png" alt="product image">
+                <img src="{{ cartProduct.thumbnail }}" alt="product image">
             </div>
             <div class="product-detail">
-                <h3 class="product-heading">Product Name</h3>
+                <h3 class="product-heading">{{ cartProduct.title }}</h3>
                 <p class="desc">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing ...
+                    {{ cartProduct.description | slice:0:60 }}...
                 </p>
-                <p class="price">$300</p>
+                <p class="price">${{ cartProduct.price }}</p>
             </div>
             <div class="item-count">
                 <form action="" class="form">
-                    <select class="model-box" id="color" name="color">
-                        <option class="option" value="1">Red</option>
-                        <option class="option" value="2">Pink</option>
-                        <option class="option" value="3">Nude</option>
+                    <select class="model-box" id="color" name="color"
+                     [(ngModel)]="cartProduct.model_id" (change)="onChangeModel(cartProduct)">
+                        <option class="option" 
+                            *ngFor="let model of cartProduct.models"       
+                        value={{model.id}}>{{ model.text }}</option>
                     </select>
+                    
                     <div class="pcs">
-                        <input type="number" min="1" max="10" name="pcs" value="1" id="pcs">
+                        <input type="number" min="1" max="10" name="pcs" id="pcs"
+                            [(ngModel)]="cartProduct.quantity" 
+                            value="{{ cartProduct.quantity }}" 
+                            (change)="onChangeQuantity()">
                         <span class="text">Pcs</span>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+    <div class="buttons">
+        <div class="container">
+            <button class="btn btn-next" (click) = switch()>Next</button>
+            <button class="btn btn-cancel">Cancel</button>
+        </div>
+    </div>
+    
 </section>

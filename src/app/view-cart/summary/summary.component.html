@@ -2,19 +2,23 @@
     <h2 class="section-heading py-1">Summary</h2>
     <div class="items"
     [ngClass] = "{ 'items-none': currentTab == 0 }">
-        <div class="item my-1">
+        <div class="item my-1"
+            *ngFor="let cartDetail of summaryData['cartDetails']">
             <div class="product-image">
-                <img src="../../../assets/images/products/Lipsticsk-11.png" alt="product image">
+                <img src="{{ cartDetail.thumbnail }}" alt="product image">
             </div>
             <div class="detail">
-                <h3 class="product-name">Product Name</h3>
-                <p class="price">$300</p>
+                <h3 class="product-name">{{ cartDetail.title }}</h3>
+                <p class="price">${{ cartDetail.price }}</p>
+                <p class="pcs">{{ cartDetail.quantity }} pcs</p>
             </div>
         </div>
     </div>
     <div class="coupen"
     [ngClass] = "{ 'items-none': currentTab == 1 }">
-        <p>ENTER COUPON CODE</p>
+        <input type="text" placeholder="ENTER COUPON CODE" name="couponCode" 
+        [(value)]="couponValue" (change) = couponCode($event)>
+        <small *ngIf="coupon.error != null">{{coupon.error}}</small>
     </div>
     <div class="voucher"
     [ngClass] = "{ 'items-none': currentTab == 0 }">
@@ -28,19 +32,23 @@
     <div class="calculation">
         <div class="sub-total">
             <p>SUBTOTAL</p>
-            <p>$600</p>
+            <p>${{summaryData.cash.subTotal}}</p>
         </div>
         <div class="shipping">
             <p>SHIPPING</p>
-            <p>free</p>
+            <p>${{summaryData.cash.shipping}}</p>
         </div>
         <div class="taxes">
             <p>TAXES</p>
-            <p>$13</p>
+            <p>${{summaryData.cash.taxes}}</p>
+        </div>
+        <div class="discount" [ngClass] = "{ 'items-none': summaryData.cash.discount == 0 }">
+            <p>DISCOUNT</p>
+            <p>${{summaryData.cash.discount}}</p>
         </div>
         <div class="total">
             <p>TOTAL</p>
-            <p>$613</p>
+            <p>${{summaryData.cash.total}}</p>
         </div>
     </div>
 </section>

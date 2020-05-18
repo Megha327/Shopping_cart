@@ -2,7 +2,7 @@
     <div class="container">
         <ul class="cart-progress">
             <li *ngFor="let process of cartProcess; let i = index"
-            [ngClass]="{'activeCart': i == currentTab}">{{ process }}</li>
+            [ngClass]="{'activeCart': i == currentTab}">{{ process.index }}. {{ process.tabName }}</li>
         </ul>
     </div>
 </section>
@@ -14,10 +14,10 @@
         <app-summary [currentTab] = "currentTab"></app-summary>
     </div>
 </div>
-<div class="buttons">
+<!-- <div class="buttons">
     <div class="container">
         <button class="btn btn-next" (click) = switch(currentTab+1)>Next</button>
         <button class="btn btn-cancel">Cancel</button>
     </div>
-</div>
+</div> -->
 

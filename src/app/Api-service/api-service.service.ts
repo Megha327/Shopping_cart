@@ -27,7 +27,24 @@ export class ApiServiceService {
     return this.getProductsByOffsetAndMax(offset, max);
   }
 
+  public getProductsByFilter(searchTerm:string) {
+    let offset:number = 0;
+    let max:number = 12;
+  
+    // this.http.get(url)
+    return this.mockService.getProductsBySearchTermAndOffsetAndMax(searchTerm, offset, max);
+  }
+
   public getProductById(id) {
+    // http.get("Url for getProductById")
     return this.mockService.getProductById(id);
+  }
+
+  public getProductByIds(ids: number[]) {
+    return this.mockService.getProductByIds(ids);
+  }
+
+  public getCouponByCode(code:string) {
+    return this.mockService.getCouponByCode(code);
   }
 }

@@ -10,143 +10,143 @@ export class MockDataService {
   products = [
     {
       id: 1,
-      title:"Product Name",
+      title:"Product Name1",
       rating:3,
       price:300,
       thumbnail:"../../../assets/images/products/Lipsticsk-10.png"
     },
     {
       id: 2,
-      title:"Product Name",
+      title:"Product Name2",
       rating:2,
       price:400,
       thumbnail:"../../../assets/images/products/Lipsticsk-11.png"
     },
     {
       id: 3,
-      title:"Product Name",
+      title:"Product Name3",
       rating:4,
       price:350,
       thumbnail:"../../../assets/images/products/Lipsticsk-12.png"
     },
     {
       id: 4,
-      title:"Product Name",
+      title:"Product Name4",
       rating:3,
       price:1500,
       thumbnail:"../../../assets/images/products/Lipsticsk-10.png"
     },
     {
       id: 5,
-      title:"Product Name",
+      title:"Product Name5",
       rating:5,
       price:700,
-      thumbnail:"../../../assets/images/products/Lipsticsk-10.png"
+      thumbnail:"../../../assets/images/products/Lipsticsk-12.png"
     },
     {
       id: 6,
-      title:"Product Name",
+      title:"Product Name6",
       rating:3,
       price:300,
-      thumbnail:"../../../assets/images/products/Lipsticsk-10.png"
+      thumbnail:"../../../assets/images/products/Lipsticsk-11.png"
     },
     {
       id: 7,
-      title:"Product Name",
+      title:"Product Name7",
       rating:2,
       price:400,
-      thumbnail:"../../../assets/images/products/Lipsticsk-10.png"
+      thumbnail:"../../../assets/images/products/Lipsticsk-12.png"
     },
     {
       id: 8,
-      title:"Product Name",
+      title:"Product Name8",
       rating:4,
       price:350,
-      thumbnail:"../../../assets/images/products/Lipsticsk-10.png"
+      thumbnail:"../../../assets/images/products/Lipsticsk-11.png"
     },
     {
       id: 9,
-      title:"Product Name",
+      title:"Product Name9",
       rating:3,
       price:1500,
       thumbnail:"../../../assets/images/products/Lipsticsk-10.png"
     },
     {
       id: 10,
-      title:"Product Name",
+      title:"Product Name10",
       rating:5,
       price:700,
-      thumbnail:"../../../assets/images/products/Lipsticsk-10.png"
+      thumbnail:"../../../assets/images/products/Lipsticsk-11.png"
     },
     {
       id: 11,
-      title:"Product Name",
+      title:"Product Name11",
       rating:3,
       price:300,
       thumbnail:"../../../assets/images/products/Lipsticsk-10.png"
     },
     {
       id: 12,
-      title:"Product Name",
+      title:"Product Name12",
       rating:2,
       price:400,
-      thumbnail:"../../../assets/images/products/Lipsticsk-10.png"
+      thumbnail:"../../../assets/images/products/Lipsticsk-12.png"
     },
     {
       id: 13,
-      title:"Product Name",
+      title:"Product Name13",
       rating:4,
       price:350,
       thumbnail:"../../../assets/images/products/Lipsticsk-10.png"
     },
     {
       id: 14,
-      title:"Product Name",
+      title:"Product Name14",
       rating:3,
       price:1500,
-      thumbnail:"../../../assets/images/products/Lipsticsk-10.png"
+      thumbnail:"../../../assets/images/products/Lipsticsk-11.png"
     },
     {
       id: 15,
-      title:"Product Name",
+      title:"Product Name15",
       rating:5,
       price:700,
-      thumbnail:"../../../assets/images/products/Lipsticsk-10.png"
+      thumbnail:"../../../assets/images/products/Lipsticsk-12.png"
     },
     {
       id: 16,
-      title:"Product Name",
+      title:"Product Name16",
       rating:3,
       price:300,
-      thumbnail:"../../../assets/images/products/Lipsticsk-10.png"
+      thumbnail:"../../../assets/images/products/Lipsticsk-12.png"
     },
     {
       id: 17,
-      title:"Product Name",
+      title:"Product Name17",
       rating:2,
       price:400,
-      thumbnail:"../../../assets/images/products/Lipsticsk-10.png"
+      thumbnail:"../../../assets/images/products/Lipsticsk-11.png"
     },
     {
       id: 18,
-      title:"Product Name",
+      title:"Product Name18",
       rating:4,
       price:350,
       thumbnail:"../../../assets/images/products/Lipsticsk-10.png"
     },
     {
       id: 19,
-      title:"Product Name",
+      title:"Product Name19",
       rating:3,
       price:1500,
-      thumbnail:"../../../assets/images/products/Lipsticsk-10.png"
+      thumbnail:"../../../assets/images/products/Lipsticsk-11.png"
     },
     {
       id: 20,
-      title:"Product Name",
+      title:"Product Name20",
       rating:5,
       price:700,
-      thumbnail:"../../../assets/images/products/Lipsticsk-10.png"
+      thumbnail:"../../../assets/images/products/Lipsticsk-12.png"
     }
   ];
 
@@ -182,7 +182,7 @@ export class MockDataService {
 
   product_models = [
     {
-      id: 1,
+      product_id: 1,
       model_id: 1,
       images: [
         "https://images-static.nykaa.com/media/catalog/product/tr:w-276,h-276,cm-pad_resize/6/9/6902395670971_1_1.jpg",
@@ -191,7 +191,7 @@ export class MockDataService {
       ]
     },
     {
-      id: 2,
+      product_id: 1,
       model_id: 2,
       images: [
         "../../../assets/images/products/Lipsticsk-10.png",
@@ -200,7 +200,7 @@ export class MockDataService {
       ]
     },
     {
-      id: 3,
+      product_id: 1,
       model_id: 3,
       images: [
         "../../../assets/images/products/Lipsticsk-12.png",
@@ -209,6 +209,22 @@ export class MockDataService {
       ]
     }
   ];
+
+  coupons = [{
+    code: "CODE15",
+    discount: 15,
+    min: 100
+  },
+  {
+    code: "CODE50",
+    discount: 50,
+    min: 600
+  },
+  {
+    code: "CODE200",
+    discount: 200,
+    min: 2000
+  }]
   // dummy data end
 
   constructor(
@@ -229,8 +245,12 @@ export class MockDataService {
     product.models = this.models;
   }
 
-  private createProductMode(product) {
-    product.product_models = this.product_models;
+  private createProductModel(product) {
+    product.product_models = [];
+    this.product_models.forEach(pm => {
+      pm.product_id = product.id;
+      product.product_models.push(pm);
+    });
   }
 
   private createReveiws(product) {
@@ -266,6 +286,18 @@ export class MockDataService {
     return this.products.slice(offset, offset+max);
   }
 
+  getProductsBySearchTermAndOffsetAndMax(searchTerm: string, offset, max) {
+    let result = this.products
+    .filter(p => p.title.toLowerCase().includes(searchTerm.toLowerCase()));
+    if (result.length < offset) {
+      return [];
+    } else if (result.length < offset+max) {
+      return result.slice(offset, result.length);
+    } else {
+      return result.slice(offset, offset+max);
+    }
+  }
+
   public getProductById(id:number){
     let productList = this.products.filter( (p)=> p.id == id );
     // console.log("mockdata: ", id, productList);
@@ -275,11 +307,45 @@ export class MockDataService {
     let product = productList[0];
     product['reviewCount'] = Math.floor(Math.random() * 5);
     this.createModel(product);
-    this.createProductMode(product);
+    this.createProductModel(product);
     this.createReveiws(product);
     // console.log("Mocked getProductById: ", product);
     return product; 
   }
 
+public getProductByIds(ids: number[]) {
+    let productList = ids.map(id => {
+      let products = this.products.filter(product => id == product.id)
+      if (products.length > 0) {
+        return products[0];
+      }
+    })
+    
+    if (productList.length > 0) {
+      this.http.get("https://baconipsum.com/api/?type=meat-and-filler&paras=" + productList.length)
+          .subscribe( (description) => {
+            for(let i=0; i<productList.length; i++) {
+              productList[i]['description'] = description[i]; 
+            }
+          });
+          productList.forEach(product => {
+            this.createProductModel(product);
+            product['quantity'] = 1;
+            this.createModel(product);
+          })
+      
+    }
+    return productList;
+  }
 
+  public getCouponByCode(code) {
+    let coupon = this.coupons.filter(c => c.code == code);
+    let couponDetail = {};
+    if (coupon.length > 0) {
+      couponDetail = coupon[0];
+    } else {
+      couponDetail["error"] = "Coupon not found"; 
+    }
+    return couponDetail;
+  }
 }
