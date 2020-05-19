@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
-import { ShoppingCartService } from '../shopping-cart.service';
+import { ShoppingCartService } from 'src/app/shopping-cart-service/shopping-cart.service';
 import { shoppingCartValues } from './cart.constant';
 import { filter, distinctUntilChanged } from 'rxjs/operators';
 

@@ -37,7 +37,7 @@
     </div>
     <div class="buttons">
         <div class="container">
-            <button class="btn btn-next" (click) = switch()>Next</button>
+            <button class="btn btn-next" (click) = switch() [disabled] = "cartDetails == '' ">Next</button>
             <button class="btn btn-cancel">Cancel</button>
         </div>
     </div>

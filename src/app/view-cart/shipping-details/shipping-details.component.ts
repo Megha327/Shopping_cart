@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { ShoppingCartService } from 'src/app/shopping-cart.service';
+import { ShoppingCartService } from 'src/app/shopping-cart-service/shopping-cart.service';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 

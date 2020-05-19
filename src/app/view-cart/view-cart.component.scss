@@ -1,7 +1,11 @@
 @import '../../styles.scss';
 
 .cart-process{
+    position: sticky;
     background-color: $lighter-color;
+    top: 2rem;
+    z-index: 3;
+    width: 100%;
     .cart-progress{
         @extend %flex-shared;
         justify-content: center;
@@ -71,6 +75,11 @@
 
 @media(max-width: 500px){
     .cart-process{
+        position: unset;
+        background-color: $lighter-color;
+        top: unset;
+        z-index: unset;
+        width: 100%;
         .cart-progress{
             flex-direction: column;
         }

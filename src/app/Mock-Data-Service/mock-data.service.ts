@@ -13,49 +13,49 @@ export class MockDataService {
       title:"Product Name1",
       rating:3,
       price:300,
-      thumbnail:"../../../assets/images/products/Lipsticsk-10.png"
+      thumbnail:"https://images-na.ssl-images-amazon.com/images/I/711ksyUlqfL._SL1500_.jpg"
     },
     {
       id: 2,
       title:"Product Name2",
       rating:2,
       price:400,
-      thumbnail:"../../../assets/images/products/Lipsticsk-11.png"
+      thumbnail:"https://images-static.nykaa.com/media/catalog/product/2/3/23767_h-8901030586507.jpg?tr=w-500,pr-true"
     },
     {
       id: 3,
       title:"Product Name3",
       rating:4,
       price:350,
-      thumbnail:"../../../assets/images/products/Lipsticsk-12.png"
+      thumbnail:"https://cdn2.stylecraze.com/wp-content/uploads/2013/03/2156_Best-NYX-Lipsticks-%E2%80%93-Our-Top-10.jpg"
     },
     {
       id: 4,
       title:"Product Name4",
       rating:3,
       price:1500,
-      thumbnail:"../../../assets/images/products/Lipsticsk-10.png"
+      thumbnail:"https://images-na.ssl-images-amazon.com/images/I/616016gqUfL._SY355_.jpg"
     },
     {
       id: 5,
       title:"Product Name5",
       rating:5,
       price:700,
-      thumbnail:"../../../assets/images/products/Lipsticsk-12.png"
+      thumbnail:"https://rukminim1.flixcart.com/image/352/352/k5jxfgw0/lipstick/s/k/k/2-matte-attack-transferproof-lipstick-03-the-grandberries-dark-original-imafnxcz5gf2ffjg.jpeg?q=70"
     },
     {
       id: 6,
       title:"Product Name6",
       rating:3,
       price:300,
-      thumbnail:"../../../assets/images/products/Lipsticsk-11.png"
+      thumbnail:"https://images-na.ssl-images-amazon.com/images/I/61Z8EcDdcLL._SL1500_.jpg"
     },
     {
       id: 7,
       title:"Product Name7",
       rating:2,
       price:400,
-      thumbnail:"../../../assets/images/products/Lipsticsk-12.png"
+      thumbnail:"https://m.smashbox.com/media/images/products/875x773/sbx_sku_72107_875x773_0.jpg"
     },
     {
       id: 8,
@@ -69,14 +69,14 @@ export class MockDataService {
       title:"Product Name9",
       rating:3,
       price:1500,
-      thumbnail:"../../../assets/images/products/Lipsticsk-10.png"
+      thumbnail:"https://img.grouponcdn.com/deal/sYYnyLq5jgxgUugo8YKDFsLKyN4/sY-1844x1106/v1/c700x420.jpg"
     },
     {
       id: 10,
       title:"Product Name10",
       rating:5,
       price:700,
-      thumbnail:"../../../assets/images/products/Lipsticsk-11.png"
+      thumbnail:"https://images.herzindagi.info/image/2018/Sep/different-types-of-lipstick-and-its-use-main.jpg"
     },
     {
       id: 11,
@@ -97,56 +97,56 @@ export class MockDataService {
       title:"Product Name13",
       rating:4,
       price:350,
-      thumbnail:"../../../assets/images/products/Lipsticsk-10.png"
+      thumbnail:"https://thehauterfly.com/wp-content/uploads/2019/06/inpost-8-1.png"
     },
     {
       id: 14,
       title:"Product Name14",
       rating:3,
       price:1500,
-      thumbnail:"../../../assets/images/products/Lipsticsk-11.png"
+      thumbnail:"https://images-na.ssl-images-amazon.com/images/I/71%2BV%2Bx412aL._SL1300_.jpg"
     },
     {
       id: 15,
       title:"Product Name15",
       rating:5,
       price:700,
-      thumbnail:"../../../assets/images/products/Lipsticsk-12.png"
+      thumbnail:"https://images-na.ssl-images-amazon.com/images/I/61iRwHWiYeL._SL1300_.jpg"
     },
     {
       id: 16,
       title:"Product Name16",
       rating:3,
       price:300,
-      thumbnail:"../../../assets/images/products/Lipsticsk-12.png"
+      thumbnail:"https://beautypeople.co.in/wp-content/uploads/2020/03/Beauty-People-Sheer-Color-Lipstick-300x300.jpg"
     },
     {
       id: 17,
       title:"Product Name17",
       rating:2,
       price:400,
-      thumbnail:"../../../assets/images/products/Lipsticsk-11.png"
+      thumbnail:"https://images.asos-media.com/products/nars-sheer-lipstick-sex-shuffle/13575580-4?$XXL$&wid=513&fit=constrain"
     },
     {
       id: 18,
       title:"Product Name18",
       rating:4,
       price:350,
-      thumbnail:"../../../assets/images/products/Lipsticsk-10.png"
+      thumbnail:"https://rukminim1.flixcart.com/image/352/352/jxtakcw0/lipstick/j/7/v/1-power-bullet-matte-lipstick-pink-huda-beauty-original-imafg6tkztrmdbhn.jpeg?q=70"
     },
     {
       id: 19,
       title:"Product Name19",
       rating:3,
       price:1500,
-      thumbnail:"../../../assets/images/products/Lipsticsk-11.png"
+      thumbnail:"https://pyxis.nymag.com/v1/imgs/de0/8fe/2832337a81b785ae1a70d699d0433bd58f.rsquare.w600.jpg"
     },
     {
       id: 20,
       title:"Product Name20",
       rating:5,
       price:700,
-      thumbnail:"../../../assets/images/products/Lipsticsk-12.png"
+      thumbnail:"https://www.byrdie.com/thmb/rWgtfE6zLh3vgoLRWC4mKtNcVEY=/2000x2000/filters:no_upscale():max_bytes(150000):strip_icc()/HourglassCosmeticsOpaqueRougeLiquidLipstick-5c50caa84cedfd0001ddb730.jpg"
     }
   ];
 
@@ -177,6 +177,10 @@ export class MockDataService {
     {
       id: 3,
       text: "Nude"
+    },
+    {
+      id: 4,
+      text: "Brown"
     }
   ];
 
@@ -185,8 +189,8 @@ export class MockDataService {
       product_id: 1,
       model_id: 1,
       images: [
-        "https://images-static.nykaa.com/media/catalog/product/tr:w-276,h-276,cm-pad_resize/6/9/6902395670971_1_1.jpg",
-        "https://images-static.nykaa.com/media/catalog/product/tr:w-276,h-276,cm-pad_resize/g/a/game-on_pr1_1.jpg",
+        "../../../assets/images/products/redMain.jpg",
+        "../../../assets/images/products/redLeft.jpeg",
         "https://images-static.nykaa.com/media/catalog/product/tr:w-276,h-276,cm-pad_resize/l/k/lkm_matrev_1.jpg"
       ]
     },
@@ -194,18 +198,27 @@ export class MockDataService {
       product_id: 1,
       model_id: 2,
       images: [
-        "../../../assets/images/products/Lipsticsk-10.png",
-        "../../../assets/images/products/Lipsticsk-11.png",
-        "../../../assets/images/products/Lipsticsk-12.png"
+        "../../../assets/images/products/pinkMain.jpg",
+        "../../../assets/images/products/pinkLeft.jpeg",
+        "../../../assets/images/products/pinkright.jpg"
       ]
     },
     {
       product_id: 1,
       model_id: 3,
       images: [
-        "../../../assets/images/products/Lipsticsk-12.png",
-        "../../../assets/images/products/Lipsticsk-10.png",
-        "../../../assets/images/products/Lipsticsk-11.png"
+        "../../../assets/images/products/NudeMain.jpg",
+        "../../../assets/images/products/nudeleft.jpg",
+        "../../../assets/images/products/nuderight.jpeg"
+      ]
+    },
+    {
+      product_id: 1,
+      model_id: 4,
+      images: [
+        "../../../assets/images/products/brownMain.jpeg",
+        "../../../assets/images/products/brownLeft.jpg",
+        "../../../assets/images/products/browright.png"
       ]
     }
   ];

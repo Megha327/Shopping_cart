@@ -3,13 +3,13 @@
       <div class="product-description">
             <div class="image-gallery p-1">
                 <div class="main-image">
-                    <img src="{{ currentProductModel['selected'] }}" alt="">
+                    <img src="{{ currentProductModel['selected'] }}" alt="thumbnail image">
                 </div>
                 <div class="multiple-image">
                     <a *ngFor="let image of currentProductModel['images']"
                     (mouseover) = "onChangeImageBox(image)"
                     class="multiple-inner-img">
-                        <img src="{{ image }}" alt="">
+                        <img src="{{ image }}" alt="short image">
                     </a>
                 </div>
             </div>

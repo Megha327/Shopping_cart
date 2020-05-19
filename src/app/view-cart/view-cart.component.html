@@ -1,4 +1,4 @@
-<section class="cart-process py-2">
+<section class="cart-process py-2 border-bottom">
     <div class="container">
         <ul class="cart-progress">
             <li *ngFor="let process of cartProcess; let i = index" (click) = "onTabClick(i)"
@@ -14,7 +14,4 @@
         <app-summary [currentTab] = "currentTab"></app-summary>
     </div>
 </div>
-<!-- <ng-content> -->
-    <!-- <app-shopping-cart></app-shopping-cart> -->
-<!-- </ng-content> -->
 

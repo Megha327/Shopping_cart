@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
-import { ShoppingCartService } from 'src/app/shopping-cart.service';
+import { ShoppingCartService } from 'src/app/shopping-cart-service/shopping-cart.service';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -17,6 +17,7 @@ export class ShoppingCartComponent implements OnInit {
 
   ngOnInit(): void {
     this.refreshCart();
+    console.log("cart-details: ", this.cartDetails);
   }
 
   refreshCart() {

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiServiceService } from 'src/app/Api-service/api-service.service';
-import { ShoppingCartService } from 'src/app/shopping-cart.service';
+import { ShoppingCartService } from 'src/app/shopping-cart-service/shopping-cart.service';
 
 @Component({
   selector: 'app-description',
