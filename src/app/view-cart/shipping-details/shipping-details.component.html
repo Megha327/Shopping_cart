@@ -7,19 +7,20 @@
             class="form-detail"
          >
          <div id="user-data" ngModelGroup = "userData" #userData = "ngModelGroup">
-             <p>Please Fill all fields *</p>
+             <p class="error">Please Fill all fields *</p>
                 <div class="form-input">
                     <div class="form-group">
                         <input 
                             type="text" 
                             id="firstName" 
                             placeholder="First Name *"
-                            [(ngModel)] = "user.firstName" 
+                            [(ngModel)] = "user.firstName"
+                            pattern="[a-zA-Z ]*" 
                             name="firstName"  
                             required 
                             #firstName="ngModel"
                         >
-                        <span class="span-block" *ngIf="!firstName.valid && firstName.touched">
+                        <span class="error" *ngIf="!firstName.valid && firstName.touched">
                             Please enter FirstName!!
                         </span>
                     </div>
@@ -27,13 +28,14 @@
                         <input 
                             type="text" 
                             id="lastName"
-                            [(ngModel)] = "user.lastName" 
+                            [(ngModel)] = "user.lastName"
+                            pattern="[a-zA-Z ]*" 
                             name="lastName" 
                             placeholder="Last Name *" 
                             required
                             #lastName="ngModel"
                         >
-                        <span class="span-block" *ngIf="!lastName.valid && lastName.touched">
+                        <span class="error" *ngIf="!lastName.valid && lastName.touched">
                             Please enter lastName!!
                         </span>
                     </div>
@@ -48,7 +50,7 @@
                         required
                         #address1="ngModel"
                     >
-                    <span class="span-block" *ngIf="!address1.valid && address1.touched">
+                    <span class="error" *ngIf="!address1.valid && address1.touched">
                         Please enter Proper Address 1 !!
                     </span>
                 </div> 
@@ -58,8 +60,7 @@
                         id="address2"
                         [(ngModel)] = "user.address2"
                         name="address2" 
-                        placeholder="Address 2 *" 
-                        required
+                        placeholder="Address 2 " 
                     >
                     <!-- <span class="span-block" *ngIf="!address2.valid && address2.touched">
                         Please enter proper Address 2 !!
@@ -85,12 +86,13 @@
                             type="text" 
                             id="city"
                             [(ngModel)] = "user.city"
+                            pattern="[a-zA-Z ]*"
                             name="city" 
                             placeholder="City *" 
                             required
                             #city="ngModel"
                         >
-                        <span class="span-block" *ngIf="!city.valid && city.touched">
+                        <span class="error" *ngIf="!city.valid && city.touched">
                             Please enter city!!
                         </span>
                     </div>
@@ -101,12 +103,14 @@
                             type="text" 
                             id="zipCode"
                             [(ngModel)] = "user.zipCode"
+                            pattern="[0-9]*" 
+                            maxlength="6"
                             name="zipCode" 
                             placeholder="Zip/Postal Code *" 
                             required
                             #zipCode="ngModel"
                         >
-                        <span class="span-block" *ngIf="!zipCode.valid && zipCode.touched">
+                        <span class="error" *ngIf="!zipCode.valid && zipCode.touched">
                             Please enter Postal Code!!
                         </span>
                     </div>
@@ -114,22 +118,22 @@
                         <input 
                             type="text" 
                             id="phone"
-                            [(ngModel)] = "user.phone"
                             name="phone" 
                             placeholder="Phone Number *"
                             [ngModel]="userPhone.mobileNumber" 
-                            [pattern]="mobNumberPattern" 
+                            [pattern]="mobNumberPattern"
+                            [(ngModel)] = "user.phone" 
                             #mobNumber="ngModel"
                             required
                         >
-                        <span class="span-block" *ngIf="!userData.valid && userData.touched">
+                        <span class="error" *ngIf="!userData.valid && userData.touched">
                             <p *ngIf="!mobNumber.valid">Please enter valid PhoneNumber!!</p>
                         </span>
                     </div>
                 </div>
                 <div class="radio-form">
                     <div class="radio-box" *ngFor="let shipping of defaultShipping">
-                        <input type="radio" name="shipping"
+                        <input type="radio" name="shipping" (click) = "addShipping(shipping.value)"
                          [(ngModel)]="user.shipping" 
                          value="{{ shipping.value }}" >
                         <label>{{ shipping.text1 }} <span>{{ shipping.text2 }}</span></label>

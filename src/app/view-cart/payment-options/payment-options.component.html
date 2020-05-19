@@ -11,27 +11,51 @@
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum, iusto?</p>
                     </div>
                 </div>
-                <span class="span-block" *ngIf="!userData.valid && userData.touched">
+                <!-- <span class="error" *ngIf="!userData.valid && userData.touched">
                     Please Fill all card details *!!
-                </span>
+                </span> -->
                 <div class="card-detail">
                     <div class="cardno">
                         <input type="text" name="cardno" placeholder="0000 0000 0000 0000"
                         [(ngModel)]="payment.card.cardno"
-                        [disabled]="payment.selected != 'card'" required>
+                        pattern="[0-9]*" 
+                        maxlength="16"
+                        minlength="16"
+                        [disabled]="payment.selected != 'card'" #cardno = "ngModel" required>
+                        <small class="error" *ngIf="!cardno.valid && cardno.touched">
+                            Please enter correct card number *!!
+                        </small>
                     </div>
-                    <input type="text" name="expiry" placeholder="MM/YY"
-                        [(ngModel)]="payment.card.expiry"
-                        [disabled]="payment.selected != 'card'" required>
+                    <div class="expiry-div">
+                        <input type="text" name="expiry" placeholder="MM/YY"
+                            [(ngModel)]="payment.card.expiry"
+                            pattern="^(0[1-9]|1[0-2]|[1-9])\/(1[4-9]|[2-9][0-9]|20[1-9][1-9])$"
+                            [disabled]="payment.selected != 'card'" #expiry="ngModel" required>
+                        <small class="error" *ngIf="!expiry.valid && expiry.touched">
+                            Please Fill correct expiry date *!!
+                        </small>
+                    </div>
                     <div class="cw">
                         <input type="text" name="cvv" placeholder="CVV"
+                        pattern="[0-9]*" 
+                        maxlength="3"
+                        minlength="3"
                         [(ngModel)]="payment.card.cvv"
-                        [disabled]="payment.selected != 'card'" required>
+                        [disabled]="payment.selected != 'card'" #cvv = "ngModel" required>
+                        <small class="error" *ngIf="!cvv.valid && cvv.touched">
+                            Please Fill correct cvv *!!
+                        </small>
                     </div>
                 </div>
-                <input type="text" name="hname" placeholder="Card Holder Name"
-                    [(ngModel)]="payment.card.hname"
-                    [disabled]="payment.selected != 'card'" required>
+                <div class="holder-name">
+                    <input type="text" name="hname" placeholder="Card Holder Name"
+                        [(ngModel)]="payment.card.hname"
+                        pattern="[a-zA-Z ]*"
+                        [disabled]="payment.selected != 'card'" #hname = "ngModel" required>
+                    <span class="error" *ngIf="!hname.valid && hname.touched">
+                        Please Fill holder name *!!
+                    </span>
+                </div>
             </div>
             <div class="online-option">
                 <div class="radio-text">

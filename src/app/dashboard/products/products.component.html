@@ -6,10 +6,16 @@
                 Nemo modi quaerat cum excepturi cumque veritatis?
             </p>
         </div>
-        <div class="product-items">
+        <div class="product-items"
+        data-infinite-scroll
+         debounce
+         [infiniteScrollDistance]="scrollDistance"
+         [infiniteScrollUpDistance]="scrollUpDistance"
+         [infiniteScrollThrottle]="throttle"
+         (scrolled)="onScrollDown()" >
             <div *ngFor = "let product of products" 
             class="item">
-                <div class="image-box overlay">
+                <div class="image-box ">
                     <img src="{{ product.thumbnail }}" alt="item image">
                     <button (click)=addToCart(product.id) class="btn btn-main">Add To Cart</button>
                 </div>
@@ -24,6 +30,9 @@
                 </a>
             </div>
         </div>
+        <!-- <div class="load-more">
+            <button>Load More</button>
+        </div> -->
     </div>
 </section>
 

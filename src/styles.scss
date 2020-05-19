@@ -97,6 +97,12 @@ ul{
 .border-bottom{
     border-bottom: 1px solid $light-color;
 }
+.border-top{
+    border-top: 1px solid $light-color;
+}
+.error{
+    color: red;
+}
 
 /*utilities*/
 

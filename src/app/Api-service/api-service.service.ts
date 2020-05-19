@@ -32,6 +32,10 @@ export class ApiServiceService {
     let max:number = 12;
   
     // this.http.get(url)
+    return this.getProductsBySearchTermAndOffsetAndMax(searchTerm, offset, max);
+  }
+
+  public getProductsBySearchTermAndOffsetAndMax(searchTerm: string, offset, max) {
     return this.mockService.getProductsBySearchTermAndOffsetAndMax(searchTerm, offset, max);
   }
 
@@ -46,5 +50,13 @@ export class ApiServiceService {
 
   public getCouponByCode(code:string) {
     return this.mockService.getCouponByCode(code);
+  }
+
+  public getVoucherByCode(code:string) {
+    return this.mockService.getVoucherByCode(code);
+  }
+
+  public getShippingCostForFast() {
+    return this.mockService.getShippingCostForFast();
   }
 }

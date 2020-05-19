@@ -8,6 +8,12 @@ import { ApiServiceService } from '../Api-service/api-service.service';
 })
 export class DashboardComponent implements OnInit {
   products:{}[];
+  loaderData = {
+    offset: 0,
+    max: 12,
+    searchTerm: "",
+    isAllDataFetched: false
+  };
   
   constructor(private apiService:ApiServiceService) { }
 
@@ -18,6 +24,9 @@ export class DashboardComponent implements OnInit {
 
   onSearch(searchTerm:string){
     console.log("onSubmit: ", searchTerm);
+    this.loaderData.searchTerm = searchTerm;
+    this.loaderData.offset = 0;
+    this.loaderData.isAllDataFetched = false;
     this.products = this.apiService.getProductsByFilter(searchTerm);
   }
 

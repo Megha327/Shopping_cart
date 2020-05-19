@@ -26,26 +26,24 @@ export class ShoppingCartComponent implements OnInit {
         product.model_id = product.product_models[0].model_id;
       }
     });
-    // console.log("shopping cart cart details: ", this.cartDetails);
+    console.log("shopping cart cart details: ", this.cartDetails);
   }
 
-  removeFromCart(id:number) {
-    this.shoppingCartService.removeFromCart(id);
-    this.refreshCart();
+  removeFromCart(index:number) {
+    this.cartDetails.splice(index, 1);
+    this.setCartDetails();
   }
 
 
   switch() {
     this.shoppingCartService.setMessage(1);
-    // this.currentTab = index;
-    // console.log(this.currentTab);
     this.router.navigateByUrl("cart/shippingdetails");
   }
 
-  onChangeModel(cartProduct){
+  onChangeModel(i:number){
     this.setCartDetails();
-    cartProduct.thumbnail = cartProduct.product_models
-        .filter(pm => pm.model_id == cartProduct.model_id)[0].images[0];
+    this.cartDetails[i].thumbnail = this.cartDetails[i].product_models
+        .filter(pm => pm.model_id == this.cartDetails[i].model_id)[0].images[0];
   }
 
   onChangeQuantity(){
@@ -55,4 +53,18 @@ export class ShoppingCartComponent implements OnInit {
   setCartDetails() {
     this.shoppingCartService.setCartDetails(this.cartDetails);
   }  
+
+  maxValueOfPcs(index:number){
+    if(this.cartDetails[index].quantity < 10){
+      this.cartDetails[index].quantity++;
+      this.onChangeQuantity();
+    }
+  }
+
+  minValueOfPcs(index:number){
+    if(this.cartDetails[index].quantity > 1){
+      this.cartDetails[index].quantity--;
+      this.onChangeQuantity();
+    }
+  }
 }

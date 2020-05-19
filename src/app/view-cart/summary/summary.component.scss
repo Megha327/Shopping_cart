@@ -3,7 +3,7 @@
 .summary{
     .section-heading{
         color: $dark-color;
-        border-bottom: 1px solid $light-color;
+        // border-bottom: 1px solid $light-color;
     }
     .items{
         border-bottom: 1px solid $light-color;
@@ -13,8 +13,8 @@
             padding-left: 1rem;
             @extend %transition-shared;
             .product-image{
-                width: 30%;
-                height: 15%;
+                width: 20%;
+                height: 10%;
                 margin-right: 2rem;
                 margin-top: .5rem;
                 img{
@@ -40,35 +40,35 @@
         }
     }
     .coupen{
-        border-bottom: 1px solid $light-color;
-        padding: .5rem 0;
-      p{
-        color: $medium-color;
-      }  
+        // padding: .5rem 0;
+        input[type='text']{
+            width: 100%;
+            padding: .5rem 0;
+            border: none;
+            outline: none;
+            color: $dark-color;
+        }
+
+
     }
     .voucher{
         border-bottom: 1px solid $light-color;
-        // padding: .5rem 0;
-        .form{
-            .model-box{
-                padding: .5rem 0;;
-                width: 100%;
-                font-size: 1rem;
-                background-color: transparent;
-                border: none;
-                color: $dark-color;
-            }
+        input[type='text']{
+            width: 100%;
+            padding: .5rem 0;
+            border: none;
+            outline: none;
+            color: $dark-color;
         }
     }
     .calculation{
-        .sub-total, .shipping, .taxes, .total{
+        .sub-total, .shipping, .taxes, .discount, .total{
             @extend %flex-shared;
             color: $medium-color;
             padding-top: .2rem;
         }
-        .taxes{
+        .discount{
             padding-bottom: .5rem;
-            border-bottom: 1px solid $light-color;
         }
         .total{
             padding-top: .5rem;
@@ -83,5 +83,26 @@
 
     .items-none{
         display: none;
+    }
+}
+
+
+@media(max-width: 500px){
+    .summary{
+        .items{
+            overflow: scroll;
+            height: 120px;
+        }
+    }
+    
+}
+
+
+@media (min-width: 360px) and (max-width: 414px){
+    .summary{
+        .items{
+            overflow: unset;
+            height: unset;
+        }
     }
 }

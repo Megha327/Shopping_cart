@@ -59,7 +59,7 @@
                     .pcs{
                         width: 40%;
                         position: relative;
-                        input[type='number']{
+                        input[type='text']{
                             width: 70%;
                             height: 30px;
                         }
@@ -67,6 +67,25 @@
                             position: absolute;
                             left: 20%;
                             bottom: 10%;
+                        }
+                        .number-up, .number-down{
+                            position: absolute;
+                            right: 31%;
+                            font-size: .59rem;
+                            padding:0 .1rem;
+                            cursor: pointer;
+
+                            &:hover:enabled{
+                                background-color: $main-color;
+                                color: $white-color;
+                            }
+                        }
+                        .number-up{
+                            top: 0;
+                        }
+                        .number-down{
+                            padding: 0 .1rem 0 .25rem;
+                            bottom: 0;
                         }
                     }
                 }
@@ -96,7 +115,7 @@
             .pcs{
                 width: 60% !important;
                 position: relative;
-                input[type='number']{
+                input[type='text']{
                     width: 100% !important;
                     height: 30px;
                     padding-left: 2px;
@@ -117,6 +136,8 @@
         padding: 0;
         .items{
             border-bottom: 1px solid $light-color;
+            overflow: scroll;
+            max-height: 700px;
             .item{
                 padding: 2rem 0 1.5rem 0;
                 @extend %transition-shared;
@@ -161,16 +182,35 @@
                             margin-bottom: 1rem;
                         }
                         .pcs{
-                            width: 40%;
+                            width: 30%;
                             position: relative;
-                            input[type='number']{
-                                width: 70%;
-                                height: 30px;
+                            input[type='text']{
+                                width: 50%;
+                                height: 40px;
                             }
                             .text{
                                 position: absolute;
                                 left: 20%;
-                                bottom: 10%;
+                                bottom: 15%;
+                            }
+                            .number-up, .number-down{
+                                position: absolute;
+                                right: 0;
+                                font-size: .85rem;
+                                padding:0 .5rem;
+                                cursor: pointer;
+    
+                                &:hover:enabled{
+                                    background-color: $main-color;
+                                    color: $white-color;
+                                }
+                            }
+                            .number-up{
+                                top: 0;
+                            }
+                            .number-down{
+                                padding:0 .5rem 0 .65rem;
+                                bottom: 0;
                             }
                         }
                     }
@@ -182,5 +222,16 @@
             }
         }
     }
-        
+
+    .buttons{
+        bottom: -150%;
+    }         
+}
+
+@media (min-width: 360px) and (max-width: 414px){
+    .buttons{
+        position: relative;
+        // top: 0;
+        bottom: 0;
+    }
 }

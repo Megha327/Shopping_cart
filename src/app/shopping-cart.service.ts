@@ -19,6 +19,8 @@ export class ShoppingCartService {
     userData:null,
     paymentDetail:null,
     coupon:null,
+    voucher:null,
+    shipping:null,
     totalCount: new Subject<number>()
   }
 
@@ -26,6 +28,8 @@ export class ShoppingCartService {
 
   public cartValue = new Subject<number>(); 
   
+  public tabFlag = new Subject<number>();
+
   // Used from "/cart" page
   setMessage(value: number) {
     this.cartValue.next(value); 
@@ -44,12 +48,24 @@ export class ShoppingCartService {
     return this.updateSummary;
   }
 
+  setTabFlag() {
+    this.tabFlag.next(Math.random()*1000);
+  }
+
+  getTabFlag() {
+    return this.tabFlag;
+  }
+
   // Used from dashboard and product page
   addProductToCartWithModel(id:number, model:number) {
+    this.addProductToCartWithModelAndQuantity(id, model, 1);
+  }
+
+  addProductToCartWithModelAndQuantity(id:number, model:number, quantity:number) {
     let cartProduct = {
       id: id,
       model: model,
-      quantity: 1
+      quantity: quantity
     };
     this.cart.selectedProducts.push(cartProduct);
     this.storeDataToLocalStorage();
@@ -76,6 +92,7 @@ export class ShoppingCartService {
     let userData = window.localStorage.getItem("userData");
     if (userData) {
       this.cart.userData = JSON.parse(userData);
+      this.addShipping(this.cart.userData.shipping);
     }
   }
 
@@ -95,23 +112,38 @@ export class ShoppingCartService {
   getCartDetails() {
     let ids:number[] = this.cart.selectedProducts.map(sp => sp.id);
     this.cart.selectedProductDetails = this.apiService.getProductByIds(ids);
+
+    let spCopy = this.cart.selectedProducts.map(s=> {
+      return {id:s.id, model:s.model, quantity:s.quantity};
+    });
     for (let i=0; i< this.cart.selectedProductDetails.length; i++) {
-      let sp = this.cart.selectedProducts.filter( p => p.id == this.cart.selectedProductDetails[i].id)[0];
+      let sp = spCopy.filter( p => p.id == this.cart.selectedProductDetails[i].id)[0];
       this.cart.selectedProductDetails[i].model_id = sp.model;
       this.cart.selectedProductDetails[i].quantity = sp.quantity;
+      for (let removeIndex = 0; removeIndex < spCopy.length; removeIndex++) {
+        if (spCopy[removeIndex].id == this.cart.selectedProductDetails[i].id) {
+          spCopy.splice(removeIndex, 1);
+          break;
+        }
+      }      
     }
     return this.cart.selectedProductDetails;
   }
 
   setCartDetails(selectedProductDetails) {
+    this.cart.selectedProducts = [];
     for (let i=0; i < selectedProductDetails.length; i++) {
-      let sp = this.cart.selectedProducts.filter( p => p.id == this.cart.selectedProductDetails[i].id)[0];
-      sp.quantity = selectedProductDetails[i].quantity;
-      sp.model = Number.parseInt(selectedProductDetails[i].model_id);
+      let p = {
+        id: this.cart.selectedProductDetails[i].id,
+        quantity: selectedProductDetails[i].quantity,
+        model: Number.parseInt(selectedProductDetails[i].model_id)
+      };
+      this.cart.selectedProducts.push(p);
     }
     this.cart.selectedProductDetails = selectedProductDetails;
     this.storeDataToLocalStorage();
     this.updateSumaryFlag();
+    this.cart.totalCount.next(this.cart.selectedProducts.length);
   }
 
   applyCouponCode(code:string) {
@@ -134,6 +166,27 @@ export class ShoppingCartService {
     return coupon;
   }
 
+
+  applyVoucher(code:string) {
+    let voucherDetails = this.apiService.getVoucherByCode(code);
+    let voucherError = {
+      error: null,
+      success: null
+    };
+    console.log("voucherDetails - ", voucherDetails);
+    if (voucherDetails['error'] != null) {
+      voucherError.error = voucherDetails['error'];
+    } else {
+      if (this.getSummeryData().cash.total >= voucherDetails['min']) {
+        this.cart.voucher = voucherDetails;
+        voucherError.success = true;
+      } else {
+        voucherError.error = "Voucher is not valid for this amount.";
+      }
+    }
+    return voucherError;
+  }
+
   getSummeryData() {
     let cash = {
       subTotal:0,
@@ -149,6 +202,13 @@ export class ShoppingCartService {
     });
     if (this.cart.coupon != null) {
       cash.discount = this.cart.coupon.discount;
+    }else if(this.cart.voucher != null){
+      cash.discount = this.cart.voucher.discount;
+    }else{
+      cash.discount = 0;
+    }
+    if(this.cart.shipping != null){
+      cash.shipping = this.cart.shipping;
     }
     cash.taxes = (cash.subTotal * 5) / 100;
     cash.total = cash.subTotal + cash.shipping + cash.taxes - cash.discount;
@@ -156,6 +216,15 @@ export class ShoppingCartService {
       cash: cash,
       cartDetails: this.cart.selectedProductDetails,
     }
+  }
+
+  addShipping(value:string) {
+    if (value == 'fast') {
+      this.cart.shipping = this.apiService.getShippingCostForFast();
+    } else {
+      this.cart.shipping = 0;
+    }
+    this.updateSumaryFlag();
   }
 
   removeFromCart(id:number) {

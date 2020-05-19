@@ -30,8 +30,7 @@
 }
 .buttons{
     margin: 1rem 0; 
-    // padding-left: 1  rem;
-    .btn{
+     .btn{
         border: none;
         margin-right: 1rem;
         padding: .5rem 2rem;
@@ -79,6 +78,8 @@
     .main-section{
         @extend %flex-shared;
         flex-direction: column;
+        margin-bottom: 3rem;
+        // padding-bottom: 3rem;
         .left-content{
             width: 100%;
         }
@@ -88,9 +89,10 @@
     }
 
     .buttons{
-        // background-color: red;
+        position: absolute;
         margin: 1rem 0; 
         text-align: center;
+        bottom: -170%;
         .btn{
             border: none;
             margin-right: .5rem;
@@ -119,7 +121,7 @@
         &:disabled{
             background-color: rgb(104, 103, 103);
         }
-    } 
+    }
       
 }
 

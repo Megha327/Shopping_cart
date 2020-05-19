@@ -37,7 +37,7 @@ export class ShippingDetailsComponent implements OnInit {
     firstName: '',
     lastName: '',
     address1: '',
-    address2: '',
+    address2: '', 
     city:'',
     country:'',
     zipCode:'',
@@ -47,7 +47,6 @@ export class ShippingDetailsComponent implements OnInit {
   
   constructor(private router:Router,
     private shoppingCartService:ShoppingCartService) {
-      // console.log("details cons called")
       let userData = this.shoppingCartService.getUserData();
       if (userData != null) {
         this.user = userData;
@@ -61,7 +60,7 @@ export class ShippingDetailsComponent implements OnInit {
 
   switchNext() {
     this.user = this.signupForm.value.userData;
-    // console.log("userdata: ",this.user);
+    console.log("userdata: ",this.user);
 
     this.shoppingCartService.addUserData(this.user);
     this.shoppingCartService.setMessage(2);
@@ -70,12 +69,17 @@ export class ShippingDetailsComponent implements OnInit {
 
   switchPre(){
     // console.log("sucess")
-    this.shoppingCartService.setMessage(1);
+    this.shoppingCartService.setMessage(0);
     this.router.navigateByUrl("cart/shoppingcart");    
   }
 
   reset(){
     this.signupForm.reset();
+  }
+
+  addShipping(value:string){
+    console.log("value of shipping and shipping: "+ value );
+    this.shoppingCartService.addShipping(value);
   }
 
 }

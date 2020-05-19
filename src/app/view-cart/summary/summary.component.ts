@@ -23,6 +23,10 @@ export class SummaryComponent implements OnInit {
   };
 
   couponValue="";
+  voucherValue="";
+  voucherError={
+    error:null
+  }
   coupon = {
     error: null
   };
@@ -42,13 +46,32 @@ export class SummaryComponent implements OnInit {
 
   couponCode(event:any){
     this.couponValue = event.target.value;
-    console.log("coupon code: ",this.couponValue);
+    // console.log("coupon code: ",this.couponValue);
     let couponDetails = this.cartService.applyCouponCode(this.couponValue);
-    if (couponDetails.error) {
+    if(this.couponValue == ''){
+      this.coupon.error = null;
+    }
+    else if (couponDetails.error) {
       this.coupon.error = couponDetails.error;
     } else {
       this.coupon.error = null;
       this.getSummeryData();
+    }
+  }
+
+  voucher(event:any){
+    this.voucherValue = event.target.value;
+    // console.log("voucher code: ",this.voucherValue);
+    let voucherDetails = this.cartService.applyVoucher(this.voucherValue);
+    if(this.voucherValue == ''){
+      this.voucherError.error = null;
+    }
+    else if (voucherDetails.error) {
+      this.voucherError.error = voucherDetails.error;
+    } else {
+      this.voucherError.error = null;
+      this.getSummeryData();
+      // console.log("voucher summary: ", this.getSummeryData());
     }
   }
 

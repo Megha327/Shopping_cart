@@ -1,7 +1,7 @@
 <section class="summary">
-    <h2 class="section-heading py-1">Summary</h2>
+    <h2 class="section-heading py-1 border-bottom">Summary</h2>
     <div class="items"
-    [ngClass] = "{ 'items-none': currentTab == 0 }">
+    [ngClass] = "{ 'display-none': currentTab == 0 }">
         <div class="item my-1"
             *ngFor="let cartDetail of summaryData['cartDetails']">
             <div class="product-image">
@@ -14,20 +14,17 @@
             </div>
         </div>
     </div>
-    <div class="coupen"
-    [ngClass] = "{ 'items-none': currentTab == 1 }">
+    <div class="coupen border-bottom"
+    [ngClass] = "{ 'display-none': currentTab == 1 }">
         <input type="text" placeholder="ENTER COUPON CODE" name="couponCode" 
         [(value)]="couponValue" (change) = couponCode($event)>
-        <small *ngIf="coupon.error != null">{{coupon.error}}</small>
+        <small class="error" *ngIf="coupon.error != null || couponValue == ' '">{{coupon.error}}</small>
     </div>
     <div class="voucher"
-    [ngClass] = "{ 'items-none': currentTab == 0 }">
-        <form action="" class="form">
-            <select class="model-box" id="voucher" name="voucher">
-                <option class="option" value="1">No voucher available</option>
-                <option class="option" value="1">15% Discount</option>
-            </select>
-        </form>
+    [ngClass] = "{ 'display-none': currentTab == 0 || summaryData.cash.discount > 0 && couponValue != ' ' && coupon.error != ' '  }">  
+        <input type="text" placeholder="Have A VOUCHER" name="voucher" 
+        [(value)]="voucherValue" (change) = voucher($event)>
+        <small class="error" *ngIf="voucherError.error != null">{{voucherError.error}}</small>
     </div>
     <div class="calculation">
         <div class="sub-total">
@@ -36,17 +33,25 @@
         </div>
         <div class="shipping">
             <p>SHIPPING</p>
-            <p>${{summaryData.cash.shipping}}</p>
+            <p *ngIf="summaryData.cash.shipping > 0; else shippingFree">${{summaryData.cash.shipping}}</p>
+            <ng-template #shippingFree>
+                <p>Free</p>
+            </ng-template>
         </div>
         <div class="taxes">
             <p>TAXES</p>
             <p>${{summaryData.cash.taxes}}</p>
         </div>
-        <div class="discount" [ngClass] = "{ 'items-none': summaryData.cash.discount == 0 }">
-            <p>DISCOUNT</p>
-            <p>${{summaryData.cash.discount}}</p>
+        <div [ngClass] = "{ 'display-none': summaryData.cash.discount == 0 }">
+            <div  class="discount">
+                <p>DISCOUNT</p>
+                <p>${{summaryData.cash.discount}}</p>
+                <!-- <ng-template #voucher>
+                    <p>${{summaryData.cash.}}</p>
+                </ng-template> -->
+            </div>
         </div>
-        <div class="total">
+        <div class="total border-top">
             <p>TOTAL</p>
             <p>${{summaryData.cash.total}}</p>
         </div>

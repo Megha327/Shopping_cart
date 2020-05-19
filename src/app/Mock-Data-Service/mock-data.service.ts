@@ -225,6 +225,22 @@ export class MockDataService {
     discount: 200,
     min: 2000
   }]
+
+  vouchers = [{
+    code: "ABC15",
+    discount: 15,
+    min: 100
+  },
+  {
+    code: "XYZ50",
+    discount: 50,
+    min: 600
+  },
+  {
+    code: "PQR200",
+    discount: 200,
+    min: 2000
+  }]
   // dummy data end
 
   constructor(
@@ -317,7 +333,8 @@ public getProductByIds(ids: number[]) {
     let productList = ids.map(id => {
       let products = this.products.filter(product => id == product.id)
       if (products.length > 0) {
-        return products[0];
+        // Coping object to save from data reference.
+        return JSON.parse(JSON.stringify(products[0]));
       }
     })
     
@@ -347,5 +364,21 @@ public getProductByIds(ids: number[]) {
       couponDetail["error"] = "Coupon not found"; 
     }
     return couponDetail;
+  }
+
+  public getVoucherByCode(code) {
+    let voucher = this.vouchers.filter(c => c.code == code);
+    let voucherDetail = {};
+    if (voucher.length > 0) {
+      voucherDetail = voucher[0];
+    } else {
+      voucherDetail["error"] = "Voucher not found"; 
+    }
+    console.log("mockdata: ",voucherDetail);
+    return voucherDetail;
+  }
+
+  public getShippingCostForFast() {
+    return 20;
   }
 }

@@ -11,7 +11,7 @@ import { OrderPlacedComponent } from './order-placed/order-placed.component';
 
 
 const routes: Routes = [
-  {path:'', component:DashboardComponent},
+  {path:'', redirectTo: 'dashboard', pathMatch: 'full'},
   {path:'dashboard', component: DashboardComponent },
   {path:'product/:id', component: ProductDescriptionComponent },
   {path:'cart', component: ViewCartComponent,
