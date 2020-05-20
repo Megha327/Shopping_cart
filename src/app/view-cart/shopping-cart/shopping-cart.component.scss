@@ -11,6 +11,8 @@
         margin: 1rem 0;
         border-bottom: 1px solid $light-color;
         min-height: 100px;
+        max-height: 350px;
+        overflow-y: scroll;
         .item{
             padding: 1.5rem 1rem 1rem 1rem;
             @extend %transition-shared;
@@ -228,7 +230,7 @@
     }
 
     .buttons{
-        bottom: -150%;
+        bottom: -170%;
     }         
 }
 

@@ -28,7 +28,7 @@ export class ShoppingCartService {
 
   public cartValue = new Subject<number>(); 
   
-  public tabFlag = new Subject<number>();
+  // public tabFlag = new Subject<number>();
 
   // Used from "/cart" page
   setMessage(value: number) {
@@ -46,14 +46,6 @@ export class ShoppingCartService {
 
   getUpdateSumary() {
     return this.updateSummary;
-  }
-
-  setTabFlag() {
-    this.tabFlag.next(Math.random()*1000);
-  }
-
-  getTabFlag() {
-    return this.tabFlag;
   }
 
   // Used from dashboard and product page
@@ -98,7 +90,6 @@ export class ShoppingCartService {
 
   clearLocalStorage() {
     window.localStorage.removeItem("cartProducts");
-    //window.localStorage.removeItem("userData"); // No need to remove for the sme user.
   }
 
   getProductCount() {

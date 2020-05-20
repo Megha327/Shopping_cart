@@ -23,11 +23,9 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log("selected product count: ", this.selectedProductCount);
   }
 
   switchCart(){
-    // this.shoppingcartService.getAddToCartValue();
     this.shoppingcartService.setMessage(0);
     this.router.navigateByUrl("/cart");
   }

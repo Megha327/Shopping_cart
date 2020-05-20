@@ -168,7 +168,6 @@
         padding: 1rem 0;
         background-color: $lighter-color;
         .product-description{
-            // @extend %flex-shared;
             flex-direction: column;
             .image-gallery{
                 padding: 0;
@@ -183,7 +182,6 @@
                     }
                 }
                 .multiple-image{
-                    // @extend %flex-shared;
                     justify-content: space-between;
                     position: relative;
                     bottom: 0;
@@ -207,7 +205,6 @@
                     }
                 }
                 .price-model-box{
-                    // @extend %flex-shared;
                     .price{
                         color: $dark-color;
                         font-size: 1.5rem;

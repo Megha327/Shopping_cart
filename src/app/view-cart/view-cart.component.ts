@@ -53,12 +53,6 @@ export class ViewCartComponent implements OnInit {
     this.cartDetails = this.shoppingCartService.getCartDetails();
   }
 
-  onTabClick(newTabValue:number){
-    if (this.currentTab == 1) {
-      this.shoppingCartService.setTabFlag();
-    }
-    console.log(newTabValue);
-  }
-
+ 
 
 }

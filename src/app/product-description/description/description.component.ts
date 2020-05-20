@@ -27,7 +27,6 @@ export class DescriptionComponent implements OnInit {
     let productModels = this.product['product_models'];
     this.currentProductModel = productModels.filter((pm) => pm['model_id'] == modelId)[0];
     this.currentProductModel['selected'] = this.currentProductModel['images'][0];
-    console.log("onchange: ", this.currentProductModel ); 
   }
 
   onChangeImageBox(imgsrc) {

@@ -21,7 +21,6 @@ export class ProductDescriptionComponent implements OnInit {
       this.id  = params['id'];
     });
     this.product = this.Apiservice.getProductById(this.id);
-    console.log("product-description: ", this.product);
   }
 
 }

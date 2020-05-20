@@ -1,7 +1,7 @@
 <section class="cart-process py-2 border-bottom">
     <div class="container">
         <ul class="cart-progress">
-            <li *ngFor="let process of cartProcess; let i = index" (click) = "onTabClick(i)"
+            <li *ngFor="let process of cartProcess; let i = index"
             [ngClass]="{'activeCart': i == currentTab}">{{ process.index }}. {{ process.tabName }}</li>
         </ul>
     </div>

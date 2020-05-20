@@ -1,6 +1,4 @@
 import { Injectable } from '@angular/core';
-// import { HttpClient } from '@angular/common/http';
-// import { map } from 'rxjs/operators';
 import { MockDataService } from '../Mock-Data-Service/mock-data.service';
 
 @Injectable({

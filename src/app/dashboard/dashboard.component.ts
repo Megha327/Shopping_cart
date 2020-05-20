@@ -19,7 +19,6 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.products = this.apiService.getProducts();
-    // console.log("dashboard: ", this.products);
   }
 
   onSearch(searchTerm:string){

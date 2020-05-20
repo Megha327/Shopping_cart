@@ -260,16 +260,6 @@ export class MockDataService {
     private http:HttpClient
   ) { }
 
-  // Dummy Data Generator
-  // private createProductDetails(product) {
-  //   let index = product.id % 3 + 1;
-  //   let productDetail = this.productDetails[index];
-  //   this.http.get("https://baconipsum.com/api/?type=meat-and-filler&paras=1")
-  //   .subscribe(desc => {
-  //     product.description = desc;
-  //   });
-  // }
-
   private createModel(product) {
     product.models = this.models;
   }
@@ -329,7 +319,6 @@ export class MockDataService {
 
   public getProductById(id:number){
     let productList = this.products.filter( (p)=> p.id == id );
-    // console.log("mockdata: ", id, productList);
     if (productList.length == 0) {
       return {errors: {message: "Product not Found."}}
     }
@@ -338,7 +327,6 @@ export class MockDataService {
     this.createModel(product);
     this.createProductModel(product);
     this.createReveiws(product);
-    // console.log("Mocked getProductById: ", product);
     return product; 
   }
 
