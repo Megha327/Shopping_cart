@@ -22,7 +22,6 @@ export class DashboardComponent implements OnInit {
   }
 
   onSearch(searchTerm:string){
-    console.log("onSubmit: ", searchTerm);
     this.loaderData.searchTerm = searchTerm;
     this.loaderData.offset = 0;
     this.loaderData.isAllDataFetched = false;

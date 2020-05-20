@@ -143,7 +143,6 @@ export class ShoppingCartService {
       error: null,
       success: null
     };
-    console.log("couponDetails - ", couponDetails);
     if (couponDetails['error'] != null) {
       coupon.error = couponDetails['error'];
     } else {
@@ -164,7 +163,6 @@ export class ShoppingCartService {
       error: null,
       success: null
     };
-    console.log("voucherDetails - ", voucherDetails);
     if (voucherDetails['error'] != null) {
       voucherError.error = voucherDetails['error'];
     } else {
@@ -231,13 +229,11 @@ export class ShoppingCartService {
   addUserData(userData:any){
     this.cart.userData = userData;
     this.storeDataToLocalStorage();
-    console.log("user data from cart service: ", this.cart.userData);
   }
 
   //aad payment detail from payment options cart
   addPaymentDetail(paymentDetail:any){
     this.cart.paymentDetail = paymentDetail;
-    console.log("payment detail from cart service: ", this.cart.paymentDetail);
   }
 
   //placeOrder get from orderPlced
@@ -248,9 +244,9 @@ export class ShoppingCartService {
       paymentDetail: this.cart.paymentDetail
     }
     order.paymentDetail.paymentInfo = paymentInfo;
-    this.clearCartAfterOrderPlaced();
     // http.post("create order url", order)
     console.log(order);
+    this.clearCartAfterOrderPlaced();
   }
 
   private clearCartAfterOrderPlaced() {
