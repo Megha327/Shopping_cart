@@ -10,140 +10,140 @@ export class MockDataService {
   products = [
     {
       id: 1,
-      title:"Product Name1",
+      title:"MAC Impassioned Lipstick",
       rating:3,
       price:300,
       thumbnail:"https://images-na.ssl-images-amazon.com/images/I/711ksyUlqfL._SL1500_.jpg"
     },
     {
       id: 2,
-      title:"Product Name2",
+      title:"Colorbar Velvet Matte Lipstick",
       rating:2,
       price:400,
       thumbnail:"https://images-static.nykaa.com/media/catalog/product/2/3/23767_h-8901030586507.jpg?tr=w-500,pr-true"
     },
     {
       id: 3,
-      title:"Product Name3",
+      title:"Inglot Lipstick 106",
       rating:4,
       price:350,
       thumbnail:"https://cdn2.stylecraze.com/wp-content/uploads/2013/03/2156_Best-NYX-Lipsticks-%E2%80%93-Our-Top-10.jpg"
     },
     {
       id: 4,
-      title:"Product Name4",
+      title:"ELLE 18 Lipstick",
       rating:3,
       price:1500,
       thumbnail:"https://images-na.ssl-images-amazon.com/images/I/616016gqUfL._SY355_.jpg"
     },
     {
       id: 5,
-      title:"Product Name5",
+      title:"Lakme Absolute Matte Lipcolor",
       rating:5,
       price:700,
       thumbnail:"https://rukminim1.flixcart.com/image/352/352/k5jxfgw0/lipstick/s/k/k/2-matte-attack-transferproof-lipstick-03-the-grandberries-dark-original-imafnxcz5gf2ffjg.jpeg?q=70"
     },
     {
       id: 6,
-      title:"Product Name6",
+      title:"Chambor Powder Matte",
       rating:3,
       price:300,
       thumbnail:"https://images-na.ssl-images-amazon.com/images/I/61Z8EcDdcLL._SL1500_.jpg"
     },
     {
       id: 7,
-      title:"Product Name7",
+      title:"Deborah Milano Red Shade",
       rating:2,
       price:400,
       thumbnail:"https://m.smashbox.com/media/images/products/875x773/sbx_sku_72107_875x773_0.jpg"
     },
     {
       id: 8,
-      title:"Product Name8",
+      title:"Faces Satin Jazzberry Jam",
       rating:4,
       price:350,
       thumbnail:"../../../assets/images/products/Lipsticsk-11.png"
     },
     {
       id: 9,
-      title:"Product Name9",
+      title:"Bourjois So Delicate",
       rating:3,
       price:1500,
       thumbnail:"https://img.grouponcdn.com/deal/sYYnyLq5jgxgUugo8YKDFsLKyN4/sY-1844x1106/v1/c700x420.jpg"
     },
     {
       id: 10,
-      title:"Product Name10",
+      title:"FENTY Beauty BY RIHANNA",
       rating:5,
       price:700,
       thumbnail:"https://images.herzindagi.info/image/2018/Sep/different-types-of-lipstick-and-its-use-main.jpg"
     },
     {
       id: 11,
-      title:"Product Name11",
+      title:"MAC Lipstick",
       rating:3,
       price:300,
       thumbnail:"../../../assets/images/products/Lipsticsk-10.png"
     },
     {
       id: 12,
-      title:"Product Name12",
+      title:"HANAMI Beauty Lipstick",
       rating:2,
       price:400,
       thumbnail:"../../../assets/images/products/Lipsticsk-12.png"
     },
     {
       id: 13,
-      title:"Product Name13",
+      title:"Nyx Soft Matte",
       rating:4,
       price:350,
       thumbnail:"https://thehauterfly.com/wp-content/uploads/2019/06/inpost-8-1.png"
     },
     {
       id: 14,
-      title:"Product Name14",
+      title:"Stila Stay All Day Liquid Lipstick",
       rating:3,
       price:1500,
       thumbnail:"https://images-na.ssl-images-amazon.com/images/I/71%2BV%2Bx412aL._SL1300_.jpg"
     },
     {
       id: 15,
-      title:"Product Name15",
+      title:"Kylie Cosmetics Matte Lipstick",
       rating:5,
       price:700,
       thumbnail:"https://images-na.ssl-images-amazon.com/images/I/61iRwHWiYeL._SL1300_.jpg"
     },
     {
       id: 16,
-      title:"Product Name16",
+      title:"Charlotte Tilbury Matte Lipstick",
       rating:3,
       price:300,
       thumbnail:"https://beautypeople.co.in/wp-content/uploads/2020/03/Beauty-People-Sheer-Color-Lipstick-300x300.jpg"
     },
     {
       id: 17,
-      title:"Product Name17",
+      title:"NARS Matte Lipstick",
       rating:2,
       price:400,
       thumbnail:"https://images.asos-media.com/products/nars-sheer-lipstick-sex-shuffle/13575580-4?$XXL$&wid=513&fit=constrain"
     },
     {
       id: 18,
-      title:"Product Name18",
+      title:"Hudda Beauty Matte Lipstick",
       rating:4,
       price:350,
       thumbnail:"https://rukminim1.flixcart.com/image/352/352/jxtakcw0/lipstick/j/7/v/1-power-bullet-matte-lipstick-pink-huda-beauty-original-imafg6tkztrmdbhn.jpeg?q=70"
     },
     {
       id: 19,
-      title:"Product Name19",
+      title:"Jeffree Star lipstick",
       rating:3,
       price:1500,
       thumbnail:"https://pyxis.nymag.com/v1/imgs/de0/8fe/2832337a81b785ae1a70d699d0433bd58f.rsquare.w600.jpg"
     },
     {
       id: 20,
-      title:"Product Name20",
+      title:"Yves Saint Laurent Tatouage Lipstick",
       rating:5,
       price:700,
       thumbnail:"https://www.byrdie.com/thmb/rWgtfE6zLh3vgoLRWC4mKtNcVEY=/2000x2000/filters:no_upscale():max_bytes(150000):strip_icc()/HourglassCosmeticsOpaqueRougeLiquidLipstick-5c50caa84cedfd0001ddb730.jpg"
