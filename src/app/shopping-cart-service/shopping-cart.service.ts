@@ -189,7 +189,6 @@ export class ShoppingCartService {
     this.cart.selectedProducts.forEach(sp => {
       let price:number = this.cart.selectedProductDetails.filter(spd => sp.id == spd.id)[0].price;
       cash.subTotal += price * sp.quantity;
-      // console.log("pid: " + sp.id + "for :" + cash.subTotal + " += " + price + "  * " + sp.quantity)
     });
     if (this.cart.coupon != null) {
       cash.discount = this.cart.coupon.discount;

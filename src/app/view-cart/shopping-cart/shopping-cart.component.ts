@@ -17,7 +17,6 @@ export class ShoppingCartComponent implements OnInit {
 
   ngOnInit(): void {
     this.refreshCart();
-    console.log("cart-details: ", this.cartDetails);
   }
 
   refreshCart() {
@@ -27,7 +26,6 @@ export class ShoppingCartComponent implements OnInit {
         product.model_id = product.product_models[0].model_id;
       }
     });
-    console.log("shopping cart cart details: ", this.cartDetails);
   }
 
   removeFromCart(index:number) {

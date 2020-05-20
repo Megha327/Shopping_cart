@@ -37,7 +37,6 @@ export class PaymentOptionsComponent implements OnInit {
 
   switchPayNow() {
     this.payment.card = this.signupForm.value.userData;
-    console.log("payemt details: ", this.payment);
     this.shoppingCartService.addPaymentDetail(this.payment);
     this.shoppingCartService.setMessage(3);
     this.router.navigateByUrl("/orderPlaced");

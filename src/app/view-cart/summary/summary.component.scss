@@ -3,7 +3,6 @@
 .summary{
     .section-heading{
         color: $dark-color;
-        // border-bottom: 1px solid $light-color;
     }
     .items{
         border-bottom: 1px solid $light-color;
@@ -42,7 +41,6 @@
         }
     }
     .coupen{
-        // padding: .5rem 0;
         input[type='text']{
             width: 100%;
             padding: .5rem 0;

@@ -20,13 +20,10 @@ export class ViewCartComponent implements OnInit {
       private shoppingCartService:ShoppingCartService
     ) {
 
-      // console.log("constructor called");
-      // this.currentTab = 0;
       
       this.router.events
          .pipe(filter(e => e instanceof NavigationEnd))
          .subscribe((e: NavigationEnd) => {
-          // console.log(e);
           switch(e.urlAfterRedirects) {
             case "/cart/shippingdetails":
               this.shoppingCartService.setMessage(1);
@@ -40,16 +37,13 @@ export class ViewCartComponent implements OnInit {
       
       this.shoppingCartService.getMessage()
       .subscribe(data => {
-        // console.log("data on view subs : ", data);
         this.currentTab = data;
-        // console.log("shopping service: view current tab", this.currentTab);
       });
 
       
     }
 
   ngOnInit(): void {
-    // console.log("init called");
     this.cartDetails = this.shoppingCartService.getCartDetails();
   }
 

@@ -28,11 +28,6 @@ export class ShippingDetailsComponent implements OnInit {
 
   @ViewChild('f') signupForm:NgForm;
 
-  mobNumberPattern = "^((\\+91-?)|0)?[0-9]{10}$";  
-  isValidFormSubmitted = false;  
-  userPhone = new UserPhone();  
-
-
   user = {
     firstName: '',
     lastName: '',
@@ -55,20 +50,17 @@ export class ShippingDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     
-    // console.log("details init called");
   }
 
   switchNext() {
     this.user = this.signupForm.value.userData;
-    console.log("userdata: ",this.user);
-
+ 
     this.shoppingCartService.addUserData(this.user);
     this.shoppingCartService.setMessage(2);
     this.router.navigateByUrl("cart/paymentoptions");
   }
 
   switchPre(){
-    // console.log("sucess")
     this.shoppingCartService.setMessage(0);
     this.router.navigateByUrl("cart/shoppingcart");    
   }
@@ -78,12 +70,7 @@ export class ShippingDetailsComponent implements OnInit {
   }
 
   addShipping(value:string){
-    console.log("value of shipping and shipping: "+ value );
     this.shoppingCartService.addShipping(value);
   }
 
 }
-
-export class UserPhone {  
-  mobileNumber ?: string;  
- } 

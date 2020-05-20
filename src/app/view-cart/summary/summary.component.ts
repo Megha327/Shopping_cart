@@ -41,12 +41,10 @@ export class SummaryComponent implements OnInit {
 
   getSummeryData() {
     this.summaryData = this.cartService.getSummeryData();
-    // console.log("summary data: ", this.summaryData);
   }
 
   couponCode(event:any){
     this.couponValue = event.target.value;
-    // console.log("coupon code: ",this.couponValue);
     let couponDetails = this.cartService.applyCouponCode(this.couponValue);
     if(this.couponValue == ''){
       this.coupon.error = null;
@@ -61,7 +59,6 @@ export class SummaryComponent implements OnInit {
 
   voucher(event:any){
     this.voucherValue = event.target.value;
-    // console.log("voucher code: ",this.voucherValue);
     let voucherDetails = this.cartService.applyVoucher(this.voucherValue);
     if(this.voucherValue == ''){
       this.voucherError.error = null;
@@ -71,7 +68,6 @@ export class SummaryComponent implements OnInit {
     } else {
       this.voucherError.error = null;
       this.getSummeryData();
-      // console.log("voucher summary: ", this.getSummeryData());
     }
   }
 
