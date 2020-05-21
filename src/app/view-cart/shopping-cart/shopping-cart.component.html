@@ -15,7 +15,7 @@
             </div>
             <div class="item-count">
                 <form action="" class="form">
-                    <select class="model-box" id="color" name="color_{{i}}"
+                    <select class="model-box" id="color_{{i}}" name="color_{{i}}"
                      [(ngModel)]="cartProduct.model_id" (change)="onChangeModel(i)">
                         <option class="option" 
                             *ngFor="let model of cartProduct.models"       

@@ -374,8 +374,7 @@ public getProductByIds(ids: number[]) {
       voucherDetail = voucher[0];
     } else {
       voucherDetail["error"] = "Voucher not found"; 
-    }
-    console.log("mockdata: ",voucherDetail);
+    }    
     return voucherDetail;
   }
 
