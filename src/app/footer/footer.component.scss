@@ -29,6 +29,9 @@ footer{
                }
                &:hover{
                     @include transform(translateY(-1rem));
+                    a{
+                        border-right: none;
+                    }
                 }
            }
        }

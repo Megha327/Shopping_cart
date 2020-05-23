@@ -39,6 +39,9 @@
                         minlength="3"
                         [(ngModel)]="payment.card.cvv"
                         [disabled]="payment.selected != 'card'" #cvv = "ngModel" required>
+                        <i class="fa fa-info-circle info-icon" aria-hidden="true">
+                        </i>
+                        <span class="tooltip">Example: 123</span>
                         <small class="error" *ngIf="!cvv.valid && cvv.touched">
                             Please Fill correct cvv *!!
                         </small>

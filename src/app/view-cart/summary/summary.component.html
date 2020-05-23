@@ -9,7 +9,7 @@
             </div>
             <div class="detail">
                 <h3 class="product-name">{{ cartDetail.title }}</h3>
-                <p class="price">${{ cartDetail.price }}</p>
+                <p class="price">${{ cartDetail.price * cartDetail.quantity }}</p>
                 <p class="pcs">{{ cartDetail.quantity }} pcs</p>
             </div>
         </div>

@@ -33,7 +33,7 @@
 
                     input{
                         height: 35px;
-                        padding-left: 2px;
+                        padding-left: 5px;
                         width: 15%;
                         margin: .5rem 0;
                     }
@@ -54,6 +54,7 @@
                             right: 0;
                         } 
                         input{
+                            padding-left: 5px;
                             width: 100%;
                         }        
                     }
@@ -61,7 +62,7 @@
                         width: 15%;
                         input{
                             height: 35px;
-                            padding-left: 2px;
+                            padding-left: 5px;
                             width: 100%;
                             margin: .5rem;    
                         }
@@ -69,21 +70,44 @@
                     .cw{
                         width: 15%;
                         position: relative;
-                        &:after {
-                            content: "\f05a";
-                            font-family: FontAwesome;
-                            font-style: normal;
-                            font-weight: normal;
-                            text-decoration: inherit;
+
+                        .info-icon{
                             color: $dark-color;
-                            font-size: 18px;
-                            padding-right: 0.5rem;
+                            font-weight: 600;
+                            font-style: normal;
                             position: absolute;
-                            top: 13px;
-                            right: 0;
+                            display: inline-block;
+                            bottom: 2.5rem;
+                            right: .5rem;
+                            cursor: pointer;
+                            &:hover + .tooltip{
+                                visibility: visible;
+                                opacity: 1;
+                            }
                         }
+                        .tooltip{
+                            visibility: hidden;
+                            opacity: 0;
+                            background-color: $main-color;
+                            border: 1px solid $main-color;
+                            color: $white-color;
+                            padding: .15rem .6rem;
+                            font-size: .88rem;
+                            border-radius: 10px;
+                            &:before{
+                                content: "";
+                                position: absolute;
+                                top: 56%;
+                                left: 50%;
+                                margin-left: -5px;
+                                border-width: 5px;
+                                border-style: solid;
+                                border-color: transparent transparent $main-color transparent;
+                            }
+                        }                        
                         input{
                             width: 100%;
+                            padding-left: 5px;
                         }
                     }
                 }
@@ -93,6 +117,7 @@
                         width: 100%;
                         height: 35px;
                         margin: .5rem 0;
+                        padding-left: 5px;
                     }
                 }
             }

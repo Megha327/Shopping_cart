@@ -1,7 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ShoppingCartService } from 'src/app/shopping-cart-service/shopping-cart.service';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-payment-options',
@@ -30,6 +31,13 @@ export class PaymentOptionsComponent implements OnInit {
     if (this.shoppingCartService.getCart().userData == null ) {
       router.navigateByUrl("/cart");
     }
+    this.router.events
+    .pipe(filter(e => e instanceof NavigationEnd))
+    .subscribe((e: NavigationEnd) => {
+      if(this.shoppingCartService.getCartDetails().length == 0){
+      this.router.navigateByUrl("/dashboard");
+      }
+    });
   }
 
   ngOnInit(): void {

@@ -25,7 +25,11 @@ export class ShoppingCartComponent implements OnInit {
       if (product.model_id == null) {
         product.model_id = product.product_models[0].model_id;
       }
+      // if(product.quantity > 1){
+      //   product.price = product.price * product.quantity;
+      // }
     });
+    console.log("refresh shopping cart: ", this.cartDetails);
   }
 
   removeFromCart(index:number) {

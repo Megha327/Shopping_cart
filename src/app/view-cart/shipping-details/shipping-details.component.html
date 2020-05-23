@@ -19,6 +19,8 @@
                             name="firstName"  
                             required 
                             #firstName="ngModel"
+                            autofocus
+                            autocomplete="off"
                         >
                         <span class="error" *ngIf="!firstName.valid && firstName.touched">
                             Please enter FirstName!!

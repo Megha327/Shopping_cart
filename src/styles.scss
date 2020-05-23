@@ -118,6 +118,7 @@ ul{
     color: $white-color;
     background-color: $main-color;
     @extend %transition-shared;
+    font-weight: 600;
     
     &:hover{
         background-color: $dark-color;

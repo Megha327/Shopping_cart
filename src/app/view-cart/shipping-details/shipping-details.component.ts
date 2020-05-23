@@ -1,7 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ShoppingCartService } from 'src/app/shopping-cart-service/shopping-cart.service';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-shipping-details',
@@ -46,7 +47,18 @@ export class ShippingDetailsComponent implements OnInit {
       if (userData != null) {
         this.user = userData;
       }
-     }
+
+      this.router.events
+         .pipe(filter(e => e instanceof NavigationEnd))
+         .subscribe((e: NavigationEnd) => {
+           if(this.shoppingCartService.getCartDetails().length == 0){
+            //  e.urlAfterRedirects = "/dashboard";
+            this.router.navigateByUrl("/dashboard");
+           }
+          
+          console.log("shipping cart: ", e);
+      });
+  }
 
   ngOnInit(): void {
     

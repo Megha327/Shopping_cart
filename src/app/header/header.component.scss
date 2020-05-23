@@ -32,6 +32,7 @@ header{
                         padding: 0 1.5rem;
                         border-right: 2px solid $medium-color;
                         @extend %transition-shared;
+                        cursor: pointer;
                         &:hover{
                             color: $main-color;
                         }
@@ -43,6 +44,9 @@ header{
                     }
                     &:hover{
                         transform: translateY(-.5rem);
+                        a{
+                            border-right: none;
+                        }
                     }
                 }
             }

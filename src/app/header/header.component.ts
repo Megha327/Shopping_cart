@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 import { ShoppingCartService } from 'src/app/shopping-cart-service/shopping-cart.service';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-header',
@@ -10,11 +11,13 @@ import { ShoppingCartService } from 'src/app/shopping-cart-service/shopping-cart
 export class HeaderComponent implements OnInit {
 
   selectedProductCount = 0;
+  select=0;
+  routerLink ;
 
   constructor(private router:Router,
       private shoppingcartService:ShoppingCartService
     ) {
-
+      
       this.shoppingcartService.getProductCount()
       .subscribe(totalCount => {
         this.selectedProductCount = totalCount;
@@ -23,11 +26,17 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+   
   }
 
   switchCart(){
     this.shoppingcartService.setMessage(0);
     this.router.navigateByUrl("/cart");
   }
+
+  // goToDashboard(){
+  //   this.select = 0;
+  //   this.router.navigateByUrl("/dashboard");
+  // }
 
 }

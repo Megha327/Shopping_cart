@@ -1,20 +1,27 @@
 <header class="border-bottom">
-    <nav class="navbar">
-        <div class="logo">
-            <h1>Online<span>CARE</span></h1>
-        </div>
-        <div class="right-nav">
-            <ul class="navbar-right">
-                <li><a [routerLink]="['/dashboard']" [routerLinkActive]="['current']">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">Help</a></li>
-            </ul>
-            <div class="btn-div">
-                <div class="selected-product-count"
-                [ngClass] = "{ 'display-none' : selectedProductCount == 0 }">{{ selectedProductCount }}</div>
-                <button class="btn btn-main" (click) = "switchCart()"><i class="fa fa-shopping-cart"></i> Your Cart</button>
+    <div class="container">
+        <nav class="navbar">
+            <div class="logo">
+                <h1>Online<span>CARE</span></h1>
             </div>
-        </div>
-    </nav>
+            <div class="right-nav">
+                <ul class="navbar-right">
+                    <li>
+                        <a [routerLink]="['/dashboard']" [routerLinkActive]="['current']">Home</a>
+                        <!-- <a (click) = "goToDashboard()" 
+                        [ngClass] = "select == 0 ? 'current' : 'none'">Home</a> -->
+                    </li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+                <div class="btn-div">
+                    <div class="selected-product-count"
+                    [ngClass] = "{ 'display-none' : selectedProductCount == 0 }">{{ selectedProductCount }}</div>
+                    <button class="btn btn-main" (click) = "switchCart()"><i class="fa fa-shopping-cart"></i> Your Cart</button>
+                </div>
+            </div>
+        </nav>
+    </div>
 </header>
+<!-- [routerLinkActive]="['current']" -->

@@ -19,6 +19,7 @@
                 padding-left: 2px;
                 color: $white-color;
                 @extend %transition-shared;
+                padding-left: 10px;
                 &::placeholder{
                     color: $white-color;
                 }

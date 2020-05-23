@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiServiceService } from '../Api-service/api-service.service';
+import { Router } from '@angular/router';
+import { ShoppingCartService } from '../shopping-cart-service/shopping-cart.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,7 +17,11 @@ export class DashboardComponent implements OnInit {
     isAllDataFetched: false
   };
   
-  constructor(private apiService:ApiServiceService) { }
+  constructor(
+    private apiService:ApiServiceService,
+    private router:Router,
+    private cartService:ShoppingCartService
+  ) { }
 
   ngOnInit(): void {
     this.products = this.apiService.getProducts();

@@ -11,7 +11,7 @@
                 <p class="desc">
                     {{ cartProduct.description | slice:0:60 }}...
                 </p>
-                <p class="price">${{ cartProduct.price }}</p>
+                <p class="price">${{ cartProduct.price * cartProduct.quantity }}</p>
             </div>
             <div class="item-count">
                 <form action="" class="form">
